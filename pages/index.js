@@ -242,7 +242,7 @@ export default function Home() {
             layout="responsive"
             src={web3}
             />
-            <div className="absolute cursor-pointer inset-0 flex flex-col items-center justify-center bg-black/60 opacity-30 hover:opacity-100 transition duration-300 ease-in-out">
+            <div className="absolute cursor-pointer inset-0 flex flex-col items-center justify-center bg-black/70 opacity-0 hover:opacity-100 transition duration-300 ease-in-out">
               <p className="text-white text-center text-2xl px-4 py-2">This is a simple Java-based CLI chat application that allows clients to connect to a server and exchange messages in real-time.</p>
               <div className="flex space-x-4 mt-4">
                 <a href='https://github.com/trishitchar/Chat_application_CLI' target="_blank" rel="noreferrer" className="text-white hover:underline border-2 border-purple-400 bg-purple-400 rounded-md p-2">Live Link</a>
