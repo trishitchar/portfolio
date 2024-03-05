@@ -73,7 +73,7 @@ export default function Home() {
               Trishit Char
             </h2>
             <h3 className="text-2xl py-2 dark:text-white md:text-3xl">
-              Full Stack Developer  ||  Designer || Coder.
+              Full Stack Developer  ||  UI/UX Designer || Coder
             </h3>
             <p className="text-md py-5 leading-8 text-gray-800 dark:text-gray-200 max-w-xl mx-auto md:text-xl">
             I am a motivated and versatile individual, always eager to take on new challenges. With a passion for learning I am dedicated to delivering high-quality results. With a positive attitude and a growth mindset, I am ready to make a meaningful contribution and achieve great things.
@@ -261,7 +261,7 @@ export default function Home() {
             layout="responsive"
             src={web4}
             />
-            <div className="absolute cursor-pointer inset-0 flex flex-col items-center justify-center bg-black/60 opacity-30 hover:opacity-100 transition duration-300 ease-in-out">
+            <div className="absolute cursor-pointer inset-0 flex flex-col items-center justify-center bg-black/50 opacity-0 hover:opacity-100 transition duration-300 ease-in-out">
               <p className="text-white text-center text-2xl px-4 py-2">Some Open Source contribution on famous project like hacktoberfest, AppWrite</p>
               <div className="flex space-x-4 mt-4">
                 <a href='https://github.com/trishitchar' target="_blank" rel="noreferrer" className="text-white hover:underline border-2 border-purple-400 bg-purple-400 rounded-md p-2">Live Link</a>
