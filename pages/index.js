@@ -17,6 +17,8 @@ import web3 from "../public/web3.png";
 import web4 from "../public/web4.png";
 import web5 from "../public/web5.png";
 import web6 from "../public/web6.png";
+import { Link, animateScroll as scroll } from 'react-scroll';
+
 
 export default function Home() {
   const [darkMode, setDarkMode] = useState(true);
@@ -29,26 +31,43 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className=" bg-white px-10 dark:bg-gray-900 md:px-20 lg:px-40">
-        <section className="min-h-screen">
-          <nav className="py-10 mb-12 flex justify-between dark:text-white">
-            <h1 className="font-burtons text-xl">T C</h1>
-            <ul className="flex items-center">
+        <section id="home" className="min-h-screen">
+        <nav className="py-10 mb-12 flex justify-between dark:text-white">
+        <h1 className="font-burtons text-xl">T C</h1>
+        <ul className="flex items-center space-x-4">
               <li>
-                <BsFillMoonStarsFill
-                  onClick={() => setDarkMode(!darkMode)}
-                  className=" cursor-pointer text-2xl"
-                />
+                <Link to="skills" smooth={true} duration={500} className="hover:text-teal-500 text-1xl font-bold cursor-pointer">
+                  Skills
+                </Link>
               </li>
               <li>
-              <a
-                  className="bg-gradient-to-r from-cyan-500 text-to-teal-500 text-white px-4 py-2 border-none rounded-md ml-8"
-                  href="https://github.com/trishitchar" target="_blank"  rel="noreferrer"
-              >
-              GitHub
-              </a>
-              </li> 
+                <Link to="education" smooth={true} duration={500} className="hover:text-teal-500 text-1xl font-bold cursor-pointer">
+                  Education
+                </Link>
+              </li>
+              <li>
+                <Link to="projects" smooth={true} duration={500} className="hover:text-teal-500 text-1xl font-bold cursor-pointer">
+                  Projects
+                </Link>
+              </li>
+              <li>
+                <a
+                  href="https://github.com/trishitchar"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="bg-gradient-to-r from-cyan-500 text-to-teal-500 text-white px-4 py-2 border-none rounded-md ml-4 hover:bg-teal-500"
+                >
+                  GitHub
+                </a>
+              </li>
+              <li className="font-bold cursor-pointer transition duration-300 transform hover:scale-110">
+                <BsFillMoonStarsFill
+                  onClick={() => setDarkMode(!darkMode)}
+                  className={`text-2xl ${darkMode ? 'text-white' : 'text-gray-800'} hover:text-teal-500`}
+                />
+              </li>
             </ul>
-          </nav>
+      </nav>
           <div className="text-center p-10 py-10">
             <h2 className="text-5xl py-2 text-teal-600 font-medium dark:text-teal-400 md:text-6xl">
               Trishit Char
@@ -72,15 +91,15 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section className="py-10">
+        <section id="skills" className="py-10">
           <div className=" font-bold">
             <h5 className="text-5xl py-1 dark:text-white ">Skills</h5>
-            <div className="border-b border-gray-300 my-4"></div>
+            <div className="border-b dark:border-gray-300 border-gray-800 my-4"></div>
             <div className="flex justify-between ">
               <h1 className=" flex text-3xl py-2 leading-8 text-gray-800 dark:text-gray-200">
               Language
               </h1>
-              <div className="flex flex-row">
+              <div className="flex flex-row min-w-screen">
                 <div className="text-2xl flex text-teal-500 px-4">C++</div>
                 <div className="text-2xl flex text-purple-300 px-4">C</div>
                 <div className="text-2xl flex text-teal-500 px-4">JAVA</div>
@@ -137,10 +156,10 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section className="py-10">
+        <section id="education" className="py-10">
           <div className=" font-bold">
             <h5 className="text-5xl py-1 dark:text-white ">Education</h5>
-            <div className="border-b border-gray-300 my-4"></div>
+            <div className="border-b dark:border-gray-300 border-gray-800 my-4"></div>
             <div className="flex justify-between ">
               <h1 className=" flex text-3xl py-2 leading-8 text-gray-800 dark:text-gray-200">
               Hooghly Engineering & Technology College
@@ -169,7 +188,75 @@ export default function Home() {
               </div> 
             </div>
           </div>
-
+        </section>
+        <section id="projects"  className="py-10">
+          <div className=" font-bold">
+            <h5 className="text-5xl py-1 dark:text-white ">Projects</h5>
+            <div className="border-b dark:border-gray-300 border-gray-800 my-4"></div>
+            <div className="flex justify-between ">
+              <h1 className=" flex text-1xl py-2 leading-8 text-gray-800 dark:text-gray-200">
+                I have Worked on a wide range of projects in frontend and Backend technology, Some of them are completed some of them are not.
+              </h1>
+            </div>
+          </div>
+        </section>
+        <section>
+          <div className="flex flex-col gap-10 py-10 lg:flex-row lg:flex-wrap">
+            <div className="basis-1/3 flex-1 ">
+              <Image
+                className="rounded-lg object-cover"
+                width={"100%"}
+                height={"100%"}
+                layout="responsive"
+                src={web1}
+              />
+            </div>
+            <div className="basis-1/3 flex-1">
+              <Image
+                className="rounded-lg object-cover"
+                width={"100%"}
+                height={"100%"}
+                layout="responsive"
+                src={web2}
+              />
+            </div>
+            <div className="basis-1/3 flex-1">
+              <Image
+                className="rounded-lg object-cover"
+                width={"100%"}
+                height={"100%"}
+                layout="responsive"
+                src={web3}
+              />
+            </div>
+            <div className="basis-1/3 flex-1">
+              <Image
+                className="rounded-lg object-cover"
+                width={"100%"}
+                height={"100%"}
+                layout="responsive"
+                src={web4}
+              />
+            </div>
+            <div className="basis-1/3 flex-1">
+              <Image
+                className="rounded-lg object-cover"
+                width={"100%"}
+                height={"100%"}
+                layout="responsive"
+                src={web5}
+              />
+            </div>
+            <div className="basis-1/3 flex-1">
+              <Image
+                className="rounded-lg object-cover"
+                width={"100%"}
+                height={"100%"}
+                layout="responsive"
+                src={web6}
+              />
+            </div>
+          </div>
         </section>
       </main>
     </div>
