@@ -213,7 +213,7 @@ export default function Home() {
             <div className="absolute cursor-pointer inset-0 flex flex-col items-center justify-center bg-black/50 opacity-0 hover:opacity-100 transition duration-300 ease-in-out">
               <p className="text-white text-center text-2xl px-4 py-2">Object detection using Next js and some tensorflow</p>
               <div className="flex space-x-4 mt-4">
-                <a href='https://ai-powered-human-detection-tc.netlify.app/' target="_blank" className="text-white hover:underline border-2 border-purple-400 bg-purple-400 rounded-md p-2">Live Link</a>
+                <a href='https://ai-powered-human-detection-tc.netlify.app/' target="_blank" rel="noreferrer" className="text-white hover:underline border-2 border-purple-400 bg-purple-400 rounded-md p-2">Live Link</a>
                 <a href='https://github.com/trishitchar/AI-powered-Human-detection' target="_blank" rel="noreferrer" className="text-white hover:underline border-2 border-purple-400 bg-purple-400 rounded-md p-2">GitHub</a>
               </div>
             </div>
@@ -229,7 +229,7 @@ export default function Home() {
             <div className="absolute cursor-pointer inset-0 flex flex-col items-center justify-center bg-black/50 opacity-0 hover:opacity-100 transition duration-300 ease-in-out">
               <p className="text-white text-center text-2xl px-4 py-2">Custom telegram boy using python</p>
               <div className="flex space-x-4 mt-4">
-                <a href='https://github.com/trishitchar/telegram-bots-trishitchar' target="_blank" className="text-white hover:underline border-2 border-purple-400 bg-purple-400 rounded-md p-2">Live Link</a>
+                <a href='https://github.com/trishitchar/telegram-bots-trishitchar' target="_blank" rel="noreferrer" className="text-white hover:underline border-2 border-purple-400 bg-purple-400 rounded-md p-2">Live Link</a>
                 <a href='https://github.com/trishitchar/telegram-bots-trishitchar' target="_blank" rel="noreferrer" className="text-white hover:underline border-2 border-purple-400 bg-purple-400 rounded-md p-2">GitHub</a>
               </div>
             </div>
@@ -245,20 +245,27 @@ export default function Home() {
             <div className="absolute cursor-pointer inset-0 flex flex-col items-center justify-center bg-black/60 opacity-30 hover:opacity-100 transition duration-300 ease-in-out">
               <p className="text-white text-center text-2xl px-4 py-2">This is a simple Java-based CLI chat application that allows clients to connect to a server and exchange messages in real-time.</p>
               <div className="flex space-x-4 mt-4">
-                <a href='https://github.com/trishitchar/Chat_application_CLI' target="_blank" className="text-white hover:underline border-2 border-purple-400 bg-purple-400 rounded-md p-2">Live Link</a>
+                <a href='https://github.com/trishitchar/Chat_application_CLI' target="_blank" rel="noreferrer" className="text-white hover:underline border-2 border-purple-400 bg-purple-400 rounded-md p-2">Live Link</a>
                 <a href='https://github.com/trishitchar/Chat_application_CLI' target="_blank" rel="noreferrer" className="text-white hover:underline border-2 border-purple-400 bg-purple-400 rounded-md p-2">GitHub</a>
               </div>
             </div>
           </div>
-            <div className="basis-1/3 flex-1">
-              <Image
-                className="rounded-lg object-cover"
-                width={"100%"}
-                height={"100%"}
-                layout="responsive"
-                src={web4}
-              />
+          <div className="basis-1/3 flex-1 relative">
+            <Image
+            className="rounded-lg object-top transition duration-300 ease-in-out transform hover:scale-110"
+            width={"100%"}
+            height={"100%"}
+            layout="responsive"
+            src={web4}
+            />
+            <div className="absolute cursor-pointer inset-0 flex flex-col items-center justify-center bg-black/60 opacity-30 hover:opacity-100 transition duration-300 ease-in-out">
+              <p className="text-white text-center text-2xl px-4 py-2">Some Open Source contribution on famous project like hacktoberfest, AppWrite</p>
+              <div className="flex space-x-4 mt-4">
+                <a href='https://github.com/trishitchar' target="_blank" rel="noreferrer" className="text-white hover:underline border-2 border-purple-400 bg-purple-400 rounded-md p-2">Live Link</a>
+                <a href='https://github.com/trishitchar' target="_blank" rel="noreferrer" className="text-white hover:underline border-2 border-purple-400 bg-purple-400 rounded-md p-2">GitHub</a>
+              </div>
             </div>
+          </div>
           </div>
         </section>
       </main>
