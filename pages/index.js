@@ -194,7 +194,7 @@ export default function Home() {
             <h5 className="text-5xl py-1 dark:text-white ">Projects</h5>
             <div className="border-b dark:border-gray-300 border-gray-800 my-4"></div>
             <div className="flex justify-between ">
-              <h1 className=" flex text-1xl py-2 leading-8 text-gray-800 dark:text-gray-200">
+              <h1 className=" flex text-1xl py-1 leading-8 text-gray-800 dark:text-gray-200">
                 I have Worked on a wide range of projects in frontend and Backend technology, Some of them are completed some of them are not.
               </h1>
             </div>
@@ -204,7 +204,7 @@ export default function Home() {
           <div className="flex flex-col gap-10 py-10 lg:flex-row lg:flex-wrap">
             <div className="basis-1/3 flex-1 ">
               <Image
-                className="rounded-lg object-cover"
+                className="rounded-lg object-top"
                 width={"100%"}
                 height={"100%"}
                 layout="responsive"
@@ -236,24 +236,6 @@ export default function Home() {
                 height={"100%"}
                 layout="responsive"
                 src={web4}
-              />
-            </div>
-            <div className="basis-1/3 flex-1">
-              <Image
-                className="rounded-lg object-cover"
-                width={"100%"}
-                height={"100%"}
-                layout="responsive"
-                src={web5}
-              />
-            </div>
-            <div className="basis-1/3 flex-1">
-              <Image
-                className="rounded-lg object-cover"
-                width={"100%"}
-                height={"100%"}
-                layout="responsive"
-                src={web6}
               />
             </div>
           </div>
