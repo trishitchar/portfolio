@@ -2,7 +2,7 @@ import Head from "next/head";
 import {
   AiFillTwitterCircle,
   AiFillLinkedin,
-  AiFillYoutube,
+  AiOutlineGithub,
 } from "react-icons/ai";
 import { BsFillMoonStarsFill } from "react-icons/bs";
 import { useState } from "react";
@@ -84,6 +84,9 @@ export default function Home() {
               </button> 
               <button onClick={() => window.open("https://in.linkedin.com/in/trishit-char-5659b7200", "_blank")}>
                 <AiFillLinkedin />
+              </button> 
+              <button onClick={() => window.open("https://github.com/trishitchar", "_blank")}>
+                <AiOutlineGithub />
               </button> 
             </div>
             <div className="mx-auto bg-gradient-to-b from-teal-500 rounded-full w-80 h-80 relative overflow-hidden mt-20 md:h-96 md:w-96">
