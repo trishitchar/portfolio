@@ -102,7 +102,7 @@ export default function Home() {
               <h1 className=" flex text-3xl py-2 leading-8 text-gray-800 dark:text-gray-200">
               Language
               </h1>
-              <div className="flex flex-row min-w-screen">
+              <div className="flex flex-row flex-wrap min-w-screen">
                 <div className="text-2xl flex text-teal-500 px-4">C++</div>
                 <div className="text-2xl flex text-purple-300 px-4">C</div>
                 <div className="text-2xl flex text-teal-500 px-4">JAVA</div>
