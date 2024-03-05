@@ -42,7 +42,7 @@ export default function Home() {
               <li>
               <a
                   className="bg-gradient-to-r from-cyan-500 text-to-teal-500 text-white px-4 py-2 border-none rounded-md ml-8"
-                  href="https://github.com/trishitchar" target="_blank"
+                  href="https://github.com/trishitchar" target="_blank"  rel="noreferrer"
               >
               GitHub
               </a>
@@ -68,7 +68,7 @@ export default function Home() {
               </button> 
             </div>
             <div className="mx-auto bg-gradient-to-b from-teal-500 rounded-full w-80 h-80 relative overflow-hidden mt-20 md:h-96 md:w-96">
-              <Image src={deved} layout="fill" objectFit="cover" />
+              <Image src={deved} alt="Description of the image" layout="fill" objectFit="cover" />
             </div>
           </div>
         </section>
@@ -94,7 +94,7 @@ export default function Home() {
         <section>
           <div className="lg:flex gap-10">
             <div className="text-center shadow-lg p-10 rounded-xl my-10  dark:bg-white flex-1">
-              <Image src={design} width={100} height={100} />
+              <Image src={design} alt="Description of the image" width={100} height={100} />
               <h3 className="text-lg font-medium pt-8 pb-2  ">
                 Frontend
               </h3>
@@ -109,7 +109,7 @@ export default function Home() {
               <p className="text-gray-800 py-1">Material UI</p>
             </div>
             <div className="text-center shadow-lg p-10 rounded-xl my-10 dark:bg-white flex-1">
-              <Image src={code} width={100} height={100} />
+              <Image src={code} alt="Description of the image" width={100} height={100} />
               <h3 className="text-lg font-medium pt-8 pb-2 ">
                 Backend
               </h3>
@@ -124,7 +124,7 @@ export default function Home() {
               <p className="text-gray-800 py-1">Firebase</p>
             </div>
             <div className="text-center shadow-lg p-10 rounded-xl my-10 dark:bg-white flex-1">
-              <Image src={consulting} width={100} height={100} />
+              <Image src={consulting} alt="Description of the image" width={100} height={100} />
               <h3 className="text-lg font-medium pt-8 pb-2 ">Others</h3>
               <p className="py-2">
                 Other technology which I know or currently learning
@@ -169,7 +169,7 @@ export default function Home() {
               </div> 
             </div>
           </div>
-          
+
         </section>
       </main>
     </div>
