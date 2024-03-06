@@ -15,8 +15,6 @@ import web1 from "../public/web1.png";
 import web2 from "../public/web2.png";
 import web3 from "../public/web3.png";
 import web4 from "../public/web4.png";
-import web5 from "../public/web5.png";
-import web6 from "../public/web6.png";
 import { Link, animateScroll as scroll } from 'react-scroll';
 
 
@@ -89,7 +87,7 @@ export default function Home() {
                 <AiOutlineGithub />
               </button> 
             </div>
-            <div className="mx-auto bg-gradient-to-b from-teal-500 rounded-full w-80 h-80 relative overflow-hidden mt-20 md:h-96 md:w-96">
+            <div className="mx-auto flex flex-wrap bg-gradient-to-b from-teal-500 rounded-full w-80 h-80 relative overflow-hidden mt-20 md:h-96 md:w-96">
               <Image src={deved} alt="Description of the image" layout="fill" objectFit="cover" />
             </div>
           </div>
