@@ -32,7 +32,7 @@ export default function Home() {
         <section id="home" className="min-h-screen">
         <nav className="py-10 mb-12 flex justify-between dark:text-white">
         <h1 className="font-burtons text-xl">T C</h1>
-        <ul className="flex items-center space-x-4">
+        <ul className="flex items-center space-x-4 flex-wrap">
               <li>
                 <Link to="skills" smooth={true} duration={500} className="hover:text-teal-500 text-1xl font-bold cursor-pointer">
                   Skills
@@ -87,8 +87,8 @@ export default function Home() {
                 <AiOutlineGithub />
               </button> 
             </div>
-            <div className="mx-auto flex flex-wrap bg-gradient-to-b from-teal-500 rounded-full w-80 h-80 relative overflow-hidden mt-20 md:h-96 md:w-96">
-              <Image src={deved} alt="Description of the image" layout="fill" objectFit="cover" />
+            <div id="main_logo" className="mx-auto flex flex-wrap bg-gradient-to-b from-teal-500 rounded-full w-[15rem]  h-[15rem]  relative overflow-hidden mt-20 md:h-96 md:w-96">
+              <Image src={deved} alt="Description of the image" className="sm:w-5" layout="fill" objectFit="cover" />
             </div>
           </div>
         </section>
