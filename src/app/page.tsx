@@ -1,13 +1,10 @@
+'use client'
+import { Button } from "@/components/ui/button";
+
 export default function Home() {
   return (
     <main>
-      <div className="bg-red-400">Trishit Char Portfolio</div>
-      <div>Trishit Char Portfolio</div>
-      <div>Trishit Char Portfolio</div>
-      <div>Trishit Char Portfolio</div>
-      <div>Trishit Char Portfolio</div>
-      <div>Trishit Char Portfolio</div>
-      <div className="bg-red-400">Trishit Char Portfolio</div>
+      <Button onClick={() => alert("Button clicked!")}>Click Me</Button>
     </main>
   );
 }
