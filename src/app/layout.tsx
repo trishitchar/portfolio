@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 const siteUrl = "https://trishit.dev";
 const siteName = "Trishit Char Portfolio";
@@ -57,6 +58,7 @@ export default function RootLayout({
       <body>
         {children}
         <Analytics />
+        <SpeedInsights />
 
         {/* Structured Data: Person */}
         <script
