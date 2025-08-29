@@ -1,9 +1,9 @@
-import { siteConfig } from "@/configs/site.config";
-import Link from "next/link";
-import { Rss } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { skillsConfig } from "@/configs/skills.config";
-import { ModeToggle } from "./theme/theme-toggle";
+import { siteConfig } from '@/configs/site.config'
+import Link from 'next/link'
+import { Rss } from 'lucide-react'
+import { Button } from '@/components/ui/button'
+import { skillsConfig } from '@/configs/skills.config'
+import { ModeToggle } from './theme/theme-toggle'
 
 export default function Hero() {
   return (
@@ -27,15 +27,15 @@ export default function Hero() {
         Hey there! I'm Trishit Char, a full stack developer.
       </p>
       <div className="hidden md:flex flex-col text-sm space-y-2 rounded max-w-2xl text-foreground/70 my-7">
-        {skillsConfig.map((skill) => (
+        {skillsConfig.map(skill => (
           <p key={skill.category}>
             <span className="font-semibold text-primary/90">
               {skill.category}:
-            </span>{" "}
-            {skill.technologies.join(", ")}
+            </span>{' '}
+            {skill.technologies.join(', ')}
           </p>
         ))}
       </div>
     </section>
-  );
+  )
 }

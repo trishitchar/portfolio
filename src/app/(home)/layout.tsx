@@ -1,9 +1,9 @@
-import Hero from "@/components/hero";
+import Hero from '@/components/hero'
 
 export default function HomePageLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: React.ReactNode
 }>) {
   return (
     <main className="relative w-full lg:h-screen p-0 sm:p-5">
@@ -19,5 +19,5 @@ export default function HomePageLayout({
         </div>
       </div>
     </main>
-  );
+  )
 }
