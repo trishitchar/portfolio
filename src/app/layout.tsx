@@ -3,6 +3,7 @@ import './globals.css'
 import { Analytics } from '@vercel/analytics/next'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import { ThemeProvider } from '@/components/theme/theme-provider'
+import Hero from '@/components/hero'
 
 const siteUrl = 'https://trishit.dev'
 const siteName = 'Trishit Char Portfolio'
@@ -38,9 +39,16 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
 	return (
 		<html lang="en" suppressHydrationWarning>
-			<body>
+			<body className={`antialiased h-screen`}>
 				<ThemeProvider attribute="class" defaultTheme="light" enableSystem={false} disableTransitionOnChange>
-					{children}
+					<div className="flex h-full overflow-hidden rounded-2xl p-4 flex-col md:flex-row">
+						<div className="md:w-2/5 w-full bg-red-600 rounded-t-2xl md:rounded-l-2xl md:rounded-tr-none">
+							<Hero />
+						</div>
+						<div className="md:w-3/5 w-full bg-blue-600 overflow-hidden rounded-b-2xl md:rounded-r-2xl md:rounded-bl-none">
+							{children}
+						</div>
+					</div>
 				</ThemeProvider>
 				<Analytics />
 				<SpeedInsights />
