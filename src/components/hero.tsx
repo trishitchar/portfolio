@@ -8,11 +8,13 @@ import { socialLinks } from '@/configs/social.config'
 
 export default function Hero() {
 	return (
-		<section className="w-full flex flex-col lg:min-h-[calc(100vh-7rem)]">
+		<section className="w-full flex flex-col lg:min-h-[calc(100vh-7rem)] px-4 py-1 space-y-7">
 			{/* Header Row */}
 			<div className="flex justify-between items-center mt-6">
 				<div>
-					<h1 className="head-text-sm font-light">Trishit Char</h1>
+					<Link href={'/'} aria-label="Home">
+						<h1 className="head-text-sm font-light hover:cursor-pointer hover:underline font-mono">Trishit Char</h1>
+					</Link>
 
 					{/* Social Links Below Name */}
 					<div className="flex items-center gap-3 mt-3">
@@ -37,10 +39,10 @@ export default function Hero() {
 			</div>
 
 			{/* Bio */}
-			<p className="my-6 max-w-2xl text-foreground/80">Hey there! I'm Trishit Char, a full stack developer.</p>
+			<p className="max-w-2xl text-foreground/80">Hey there! I'm Trishit Char, a full stack developer.</p>
 
 			{/* Skills Section */}
-			<div className="flex-col text-sm space-y-2 rounded max-w-2xl text-foreground/70 my-7">
+			<div className="flex-col text-sm space-y-2 rounded max-w-2xl text-foreground/70">
 				{skillsConfig.map(skill => (
 					<p key={skill.category}>
 						<span className="font-semibold text-primary/90">{skill.category}:</span> {skill.technologies.join(', ')}

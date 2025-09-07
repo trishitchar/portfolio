@@ -63,7 +63,7 @@ export default function RootLayout({
               <div className="md:w-2/5 w-full rounded-t-2xl md:rounded-l-2xl md:rounded-tr-none border-b md:border-b-0 md:border-r border-gray-300 dark:border-gray-700">
                 <Hero />
               </div>
-              <div className="md:w-3/5 w-full overflow-hidden rounded-b-2xl md:rounded-r-2xl md:rounded-bl-none">
+              <div className="md:w-3/5 w-full overflow-y-auto rounded-b-2xl md:rounded-r-2xl md:rounded-bl-none">
                 <NavBar />
                 {children}
               </div>
