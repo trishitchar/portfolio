@@ -9,10 +9,6 @@ import { socialLinks } from '@/configs/social.config'
 export default function Hero() {
 	return (
 		<section className="w-full flex flex-col lg:min-h-[calc(100vh-7rem)]">
-			<Link href="/">
-				<span className="font-mono text-sm underline">{siteConfig.name}</span>
-			</Link>
-
 			{/* Header Row */}
 			<div className="flex justify-between items-center mt-6">
 				<div>
@@ -44,7 +40,7 @@ export default function Hero() {
 			<p className="my-6 max-w-2xl text-foreground/80">Hey there! I'm Trishit Char, a full stack developer.</p>
 
 			{/* Skills Section */}
-			<div className="hidden md:flex flex-col text-sm space-y-2 rounded max-w-2xl text-foreground/70 my-7">
+			<div className="flex-col text-sm space-y-2 rounded max-w-2xl text-foreground/70 my-7">
 				{skillsConfig.map(skill => (
 					<p key={skill.category}>
 						<span className="font-semibold text-primary/90">{skill.category}:</span> {skill.technologies.join(', ')}

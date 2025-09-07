@@ -4,6 +4,7 @@ import { Analytics } from '@vercel/analytics/next'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import { ThemeProvider } from '@/components/theme/theme-provider'
 import Hero from '@/components/hero'
+import NavBar from '@/components/navBar'
 
 const siteUrl = 'https://trishit.dev'
 const siteName = 'Trishit Char Portfolio'
@@ -46,6 +47,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
 							<Hero />
 						</div>
 						<div className="md:w-3/5 w-full bg-blue-600 overflow-hidden rounded-b-2xl md:rounded-r-2xl md:rounded-bl-none">
+							<NavBar />
 							{children}
 						</div>
 					</div>
