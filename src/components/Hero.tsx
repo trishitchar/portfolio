@@ -1,4 +1,3 @@
-import { siteConfig } from '@/configs/site.config'
 import Link from 'next/link'
 import { Rss } from 'lucide-react'
 import { Button } from '@/components/ui/button'
@@ -28,6 +27,13 @@ export default function Hero() {
 
 				{/* Right Side Controls */}
 				<div className="flex items-center gap-2">
+					{/* resume in public */}
+					<Button variant="ghost" className="rounded-full" asChild>
+						<Link href="/Trishit Char Resume.pdf" target="_blank" rel="noopener noreferrer">
+							<span className="font-mono text-sm">Resume</span>								
+						</Link>
+					</Button>
+					{/* rss feed */}
 					<Button size="icon" variant="ghost" className="rounded-full" asChild>
 						<Link href="/feed">
 							<Rss size={18} />
