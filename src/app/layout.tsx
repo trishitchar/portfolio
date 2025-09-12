@@ -13,14 +13,14 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: { default: siteName, template: "%s | " + siteName },
   description:
-    "Official portfolio of Trishit Char (trishit.dev) (@trishitchar) — Full-Stack Developer & UI/UX Designer. Explore projects, case studies, and articles on web development, React, TypeScript, and Next.js.",
+    "Official portfolio of Trishit Char (trishit.dev) (@trishitchar) - Full-Stack Developer & UI/UX Designer. Explore projects, case studies, and articles on web development, React, TypeScript, and Next.js.",
   alternates: { canonical: siteUrl },
   openGraph: {
     type: "website",
     url: siteUrl,
     title: siteName,
     description:
-      "Trishit Char (trishit.dev) (@trishitchar) — Full-Stack Developer & UI/UX Designer. Check out projects, blog posts, and case studies.",
+      "Trishit Char (trishit.dev) (@trishitchar) - Full-Stack Developer & UI/UX Designer. Check out projects, blog posts, and case studies.",
     siteName,
     images: [
       {
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     creator: "@trishitchar",
     title: siteName,
     description:
-      "Explore Trishit Char's (trishit.dev) (@trishitchar) portfolio — Full-Stack Developer & UI/UX Designer.",
+      "Explore Trishit Char's (trishit.dev) (@trishitchar) portfolio - Full-Stack Developer & UI/UX Designer.",
     images: ["/opengraph-image.png"],
   },
   authors: [{ name: "Trishit Char", url: siteUrl }],

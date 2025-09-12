@@ -1,4 +1,28 @@
+import { Metadata } from "next";
 import React from "react";
+
+export const metadata: Metadata = {
+  title: "Experience | Trishit Char",
+  description:
+    "Professional and educational experience of Trishit Char, Full Stack Developer. Includes work at Revmaxx, Tecosys, and education at HETC.",
+  alternates: {
+    canonical: "https://trishit.dev/experience",
+  },
+  openGraph: {
+    title: "Experience | Trishit Char",
+    description:
+      "Explore the journey of Trishit Char, Full Stack Developer — from professional roles at Revmaxx and Tecosys to academic milestones at HETC.",
+    url: "https://trishit.dev/experience",
+    siteName: "Trishit Char Portfolio",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Experience | Trishit Char",
+    description:
+      "Professional and academic journey of Trishit Char — Full Stack Developer.",
+  },
+};
 
 type ExperienceItem = {
     period: string;
