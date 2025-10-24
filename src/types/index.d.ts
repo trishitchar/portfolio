@@ -6,7 +6,7 @@ export type Site = {
 	siteUrl: string
 	creator: { name: string; url: string }
 	ogImage: string
-	links: { x: string; github: string; linkedin?: string; twitter?: string }
+	links: { x: string; github: string; linkedin?: string; twitter?: string; instagram?: string; facebook?: string; youtube?: string; discord?: string }
 }
 
 export type Portfolio = { name: string; tagline: string; resume: string; links: { twitter: string; github: string; linkedin: string; mail: string; discord: string } }
