@@ -13,37 +13,74 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: { default: siteName, template: "%s | " + siteName },
   description:
-    "Official portfolio of Trishit Char (trishit.dev) (@trishitchar) - Full-Stack Developer & UI/UX Designer. Explore projects, case studies, and articles on web development, React, TypeScript, and Next.js.",
-  alternates: { canonical: siteUrl },
+    "Trishit Char (Trishit) - Official portfolio at trishit.dev. Full-Stack Developer specializing in React, TypeScript, Next.js, Node.js, and AI integration. Explore projects by Trishit including AI-flix and TcharGram. Available for freelance and full-time opportunities.",
+  keywords: [
+    "Trishit",
+    "Trishit Char",
+    "Trishit developer",
+    "Trishit Char developer",
+    "Trishit full stack developer",
+    "Trishit Char portfolio",
+    "Trishit.dev",
+    "trishit.dev",
+    "Trishit Char projects",
+    "Trishit React developer",
+    "Trishit TypeScript",
+    "Trishit Next.js",
+    "Trishit AI developer",
+    "@trishitchar",
+    "trishitchar GitHub",
+    "Trishit web developer",
+    "Trishit Char full stack",
+    "Trishit MERN stack",
+  ],
+  alternates: { 
+    canonical: siteUrl,
+    types: {
+      "application/rss+xml": [{ url: "/rss.xml", title: "Trishit Char RSS Feed" }],
+    }
+  },
   openGraph: {
     type: "website",
     url: siteUrl,
-    title: siteName,
+    title: "Trishit Char | Full-Stack Developer Portfolio",
     description:
-      "Trishit Char (trishit.dev) (@trishitchar) - Full-Stack Developer & UI/UX Designer. Check out projects, blog posts, and case studies.",
+      "Trishit Char (Trishit) - Full-Stack Developer & UI/UX Designer at trishit.dev. Specializing in React, Next.js, TypeScript, Node.js, and AI-powered web applications. Check out projects, blog posts, and case studies by Trishit.",
     siteName,
     images: [
       {
         url: "/opengraph-image.png",
         width: 1200,
         height: 630,
-        alt: "Trishit Char Portfolio",
+        alt: "Trishit Char - Full-Stack Developer Portfolio",
       },
     ],
+    locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
     site: "@trishitchar",
     creator: "@trishitchar",
-    title: siteName,
+    title: "Trishit Char | Full-Stack Developer Portfolio",
     description:
-      "Explore Trishit Char's (trishit.dev) (@trishitchar) portfolio - Full-Stack Developer & UI/UX Designer.",
+      "Explore Trishit Char's (Trishit) portfolio at trishit.dev - Full-Stack Developer & UI/UX Designer specializing in React, Next.js, and AI integration.",
     images: ["/opengraph-image.png"],
   },
   authors: [{ name: "Trishit Char", url: siteUrl }],
   creator: "Trishit Char",
   publisher: "Trishit Char",
   category: "Portfolio",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
 };
 
 export default function RootLayout({
@@ -81,16 +118,140 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Person",
               name: "Trishit Char",
+              alternateName: ["Trishit", "trishitchar", "@trishitchar"],
               url: siteUrl,
+              image: `${siteUrl}/opengraph-image.png`,
+              jobTitle: "Full-Stack Developer & UI/UX Designer",
+              description: "Trishit Char (Trishit) is a Full-Stack Developer specializing in React, Next.js, TypeScript, Node.js, MongoDB, and AI integration. Based in India, Trishit creates modern web applications and has worked on projects like AI-flix (GPT-powered movie platform) and TcharGram (social networking app). View Trishit's complete portfolio at trishit.dev.",
+              email: "trishitchar@gmail.com",
+              telephone: "+91-XXXXXXXXXX",
+              address: {
+                "@type": "PostalAddress",
+                addressCountry: "IN",
+                addressRegion: "West Bengal",
+              },
               sameAs: [
                 "https://twitter.com/trishitchar",
                 "https://x.com/trishitchar",
                 "https://github.com/trishitchar",
                 "https://linkedin.com/in/trishitchar",
                 "https://instagram.com/trishit.char",
+                "https://facebook.com/trishitchar",
+                "https://youtube.com/c/trishitchar",
+                "https://discord.com/users/374062634840743680",
               ],
-              jobTitle: "Full-Stack Developer & UI/UX Designer",
-              image: `${siteUrl}/opengraph-image.png`,
+              knowsAbout: [
+                "Web Development",
+                "Full-Stack Development",
+                "React",
+                "Next.js",
+                "TypeScript",
+                "Node.js",
+                "MongoDB",
+                "PostgreSQL",
+                "AI Integration",
+                "UI/UX Design",
+                "MERN Stack",
+                "REST APIs",
+                "WebSockets",
+              ],
+              alumniOf: [
+                {
+                  "@type": "CollegeOrUniversity",
+                  name: "HETC",
+                  sameAs: "https://www.hetc.ac.in",
+                }
+              ],
+              worksFor: [
+                {
+                  "@type": "Organization",
+                  name: "Revmaxx",
+                }
+              ],
+            }),
+          }}
+        />
+
+        {/* Structured Data: WebSite */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              name: "Trishit Char Portfolio",
+              alternateName: ["Trishit.dev", "Trishit Developer Portfolio"],
+              url: siteUrl,
+              description: "Official portfolio website of Trishit Char (Trishit), showcasing full-stack development projects, technical blog posts, and professional experience.",
+              author: {
+                "@type": "Person",
+                name: "Trishit Char",
+              },
+              potentialAction: {
+                "@type": "SearchAction",
+                target: {
+                  "@type": "EntryPoint",
+                  urlTemplate: `${siteUrl}/projects?q={search_term_string}`
+                },
+                "query-input": "required name=search_term_string"
+              },
+              inLanguage: "en-US",
+            }),
+          }}
+        />
+
+        {/* Structured Data: BreadcrumbList */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              itemListElement: [
+                {
+                  "@type": "ListItem",
+                  position: 1,
+                  name: "Home",
+                  item: siteUrl,
+                },
+                {
+                  "@type": "ListItem",
+                  position: 2,
+                  name: "Projects",
+                  item: `${siteUrl}/projects`,
+                },
+                {
+                  "@type": "ListItem",
+                  position: 3,
+                  name: "Experience",
+                  item: `${siteUrl}/experience`,
+                },
+                {
+                  "@type": "ListItem",
+                  position: 4,
+                  name: "Contact",
+                  item: `${siteUrl}/contact`,
+                },
+              ],
+            }),
+          }}
+        />
+
+        {/* Structured Data: ProfilePage */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "ProfilePage",
+              mainEntity: {
+                "@type": "Person",
+                name: "Trishit Char",
+                alternateName: "Trishit",
+                identifier: "trishitchar",
+              },
+              url: siteUrl,
+              name: "Trishit Char - Developer Portfolio",
             }),
           }}
         />
