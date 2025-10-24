@@ -5,6 +5,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import { ThemeProvider } from "@/components/theme/theme-provider";
 import Hero from "@/components/Hero";
 import NavBar from "@/components/NavBar";
+import Script from "next/script";
 
 const siteUrl = "https://trishit.dev";
 const siteName = "Trishit Char Portfolio";
@@ -88,6 +89,21 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-STXNCJ9B6N"
+        />
+        <Script id="google-analytics">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-STXNCJ9B6N');
+          `}
+        </Script>
+      </head>
+
       <body className="antialiased h-screen">
         <ThemeProvider
           attribute="class"
@@ -124,9 +140,9 @@ export default function RootLayout({
               jobTitle: "Full-Stack Developer & UI/UX Designer",
               description: "Trishit Char (Trishit) is a Full-Stack Developer specializing in React, Next.js, TypeScript, Node.js, MongoDB, and AI integration. Based in India, Trishit creates modern web applications and has worked on projects like AI-flix (GPT-powered movie platform) and TcharGram (social networking app). View Trishit's complete portfolio at trishit.dev.",
               email: "trishitchar@gmail.com",
-              telephone: "+91-XXXXXXXXXX",
+              telephone: "+91-8101326242",
               address: {
-                "@type": "PostalAddress",
+                "@type": "Kolkata",
                 addressCountry: "IN",
                 addressRegion: "West Bengal",
               },
@@ -136,7 +152,7 @@ export default function RootLayout({
                 "https://github.com/trishitchar",
                 "https://linkedin.com/in/trishitchar",
                 "https://instagram.com/trishit.char",
-                "https://facebook.com/trishitchar",
+                "https://www.facebook.com/profile.php?id=100079034225717",
                 "https://youtube.com/c/trishitchar",
                 "https://discord.com/users/374062634840743680",
               ],
