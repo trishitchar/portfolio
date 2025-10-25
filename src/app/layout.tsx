@@ -36,6 +36,7 @@ export const metadata: Metadata = {
   ],
   alternates: { 
     canonical: siteUrl,
+    languages: { en: siteUrl },
     types: {
       "application/rss+xml": [{ url: "/rss.xml", title: "Trishit Char RSS Feed" }],
     }
@@ -124,7 +125,7 @@ export default function RootLayout({
               jobTitle: "Full-Stack Developer & UI/UX Designer",
               description: "Trishit Char (Trishit) is a Full-Stack Developer specializing in React, Next.js, TypeScript, Node.js, MongoDB, and AI integration. Based in India, Trishit creates modern web applications and has worked on projects like AI-flix (GPT-powered movie platform) and TcharGram (social networking app). View Trishit's complete portfolio at trishit.dev.",
               email: "trishitchar@gmail.com",
-              telephone: "+91-XXXXXXXXXX",
+              telephone: "+91-8101326242",
               address: {
                 "@type": "PostalAddress",
                 addressCountry: "IN",

@@ -45,7 +45,7 @@ export default function Hero() {
 					</Button>
 					{/* rss feed */}
 					<Button size="icon" variant="ghost" className="rounded-full" asChild>
-						<Link href="/feed" aria-label="Subscribe to Trishit Char's RSS feed">
+						<Link href="/rss.xml" aria-label="Subscribe to Trishit Char's RSS feed">
 							<Rss size={18} />
 							<span className="sr-only">RSS feed</span>
 						</Link>
