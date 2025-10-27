@@ -5,7 +5,6 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import { ThemeProvider } from "@/components/theme/theme-provider";
 import Hero from "@/components/Hero";
 import NavBar from "@/components/NavBar";
-import Script from "next/script";
 
 const siteUrl = "https://trishit.dev";
 const siteName = "Trishit Char Portfolio";
@@ -37,6 +36,7 @@ export const metadata: Metadata = {
   ],
   alternates: { 
     canonical: siteUrl,
+    languages: { en: siteUrl },
     types: {
       "application/rss+xml": [{ url: "/rss.xml", title: "Trishit Char RSS Feed" }],
     }
@@ -89,21 +89,6 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head>
-        <Script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-STXNCJ9B6N"
-        />
-        <Script id="google-analytics">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-STXNCJ9B6N');
-          `}
-        </Script>
-      </head>
-
       <body className="antialiased h-screen">
         <ThemeProvider
           attribute="class"
@@ -142,7 +127,7 @@ export default function RootLayout({
               email: "trishitchar@gmail.com",
               telephone: "+91-8101326242",
               address: {
-                "@type": "Kolkata",
+                "@type": "PostalAddress",
                 addressCountry: "IN",
                 addressRegion: "West Bengal",
               },
@@ -152,7 +137,7 @@ export default function RootLayout({
                 "https://github.com/trishitchar",
                 "https://linkedin.com/in/trishitchar",
                 "https://instagram.com/trishit.char",
-                "https://www.facebook.com/profile.php?id=100079034225717",
+                "https://facebook.com/trishitchar",
                 "https://youtube.com/c/trishitchar",
                 "https://discord.com/users/374062634840743680",
               ],
