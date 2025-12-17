@@ -7,9 +7,9 @@ import { socialLinks } from '@/configs/social.config'
 
 export default function Hero() {
 	return (
-		<section className="w-full flex flex-col lg:min-h-[calc(100vh-7rem)] px-4 py-1 space-y-7" itemScope itemType="https://schema.org/Person">
+		<section className="w-full flex flex-col px-4 py-1 space-y-7" itemScope itemType="https://schema.org/Person">
 			{/* Header Row */}
-			<header className="flex justify-between items-center mt-6">
+			<header className="flex justify-between items-center mt-6 ">
 				<div>
 					<Link href={'/'} aria-label="Trishit Char Home">
 						<h1 className="head-text-sm font-light hover:cursor-pointer hover:underline font-mono" itemProp="name">
@@ -55,7 +55,7 @@ export default function Hero() {
 			</header>
 
 			{/* Bio */}
-			<article className="max-w-2xl text-foreground/80" itemProp="description">
+			<article className="text-foreground/80" itemProp="description">
 				<p className="mb-3">
 					Hey there! I'm <strong itemProp="name">Trishit Char</strong> (often searched as <strong>Trishit</strong>), 
 					a passionate <span itemProp="jobTitle">Full Stack Developer</span> specializing in building modern, 
