@@ -11,12 +11,6 @@ export default function Hero() {
 			{/* Header Row */}
 			<header className="flex justify-between items-center mt-6 ">
 				<div>
-					<Link href={'/'} aria-label="Trishit Char Home">
-						<h1 className="head-text-sm font-light hover:cursor-pointer hover:underline font-mono" itemProp="name">
-							Trishit Char
-						</h1>
-					</Link>
-
 					{/* Social Links Below Name */}
 					<nav className="flex items-center gap-3 mt-3" aria-label="Social media links">
 						{socialLinks.map(({ platform, url, icon: Icon }) => (

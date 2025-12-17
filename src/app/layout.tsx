@@ -4,6 +4,7 @@ import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { ThemeProvider } from "@/components/theme/theme-provider";
 import Link from "next/link";
+import RightSide from "@/components/RightSide";
 
 const siteUrl = "https://trishit.dev";
 const siteName = "Trishit Char Portfolio";
@@ -106,11 +107,7 @@ export default function RootLayout({
           </div>
           {/* right side fixed */}
           <div className="fixed right-5 top-5 z-50 flex flex-col ">
-            <p>Home</p>
-            <p>Experience</p>
-            <p>Projects</p>
-            <p>Contact</p>
-            <p>FAQ</p>
+            <RightSide />
           </div>
         </ThemeProvider>
         <Analytics />

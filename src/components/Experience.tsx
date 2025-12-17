@@ -97,10 +97,10 @@ const EXPERIENCES: ExperienceItem[] = [
         ],
     },
     { period: `2021 - 2025 (${getDuration('2021-02-01', '2025-01-01')})`, title: "B.Tech, Computer Science (CSE)", company: "HETC", details: ["CGPA: 8.7 / 10"] },
-    { period: `2019 - 2021 (${getDuration('2019-02-01', '2021-01-01')})`, title: "Higher Secondary Education", company: "YSSK", details: ["Score: 89%"] },
-    { period: `2018 - 2019 (${getDuration('2018-02-01', '2019-01-01')})`, title: "Secondary Education", company: "JHC", details: ["Score: 81%"] },
 ];
 
+// TODO when user clicks on the experience it should show the experience details images videos, work, linkedin references etc. on hover it'll ask to click to view more details like https://www.carlosguijarro.com/ https://basement.studio/ view project on hover
+// will make a good illustration for images and videos, same for project section
 export default function Experience() {
     return (
         <div className="px-4 py-1 space-y-7 mx-auto" itemScope itemType="https://schema.org/Person">
@@ -109,23 +109,18 @@ export default function Experience() {
             <meta itemProp="url" content="https://trishit.dev" />
 
             <header className="mb-6">
+                {/* TODO: remove the education from below and when user hover on education it should show the education details  */}
                 <h1 className="text-4xl font-bold mb-3">Professional Experience & Education</h1>
             </header>
 
-            <div className="relative">
-                <div className="hidden md:block absolute left-6 top-0 bottom-0 w-0.5 bg-border" />
-
+            <div>
                 <ul className="space-y-8">
                     {EXPERIENCES.map((exp, idx) => (
                         <li key={idx} className="flex items-start md:items-center">
-                            <div className="flex-shrink-0 mr-4">
-                                <div className="w-4 h-4 rounded-full bg-border ring-4 ring-white dark:ring-gray-900 shadow-sm" />
-                            </div>
-
                             <div className="flex-1" itemScope itemType={exp.title.includes('B.Tech') || exp.title.includes('Education') ? "https://schema.org/EducationalOccupationalCredential" : "https://schema.org/WorkExperience"}>
                                 <div className="flex flex-col md:flex-row gap-6">
                                     <div className="w-full md:w-[60%] space-y-4">
-                                        <div className="flex flex-col md:flex-row md:justify-between md:items-center bg-white dark:bg-gray-800 p-4 rounded-md shadow-sm border border-border">
+                                        <div className="flex flex-col md:flex-row md:justify-between md:items-center p-4 rounded-md shadow-sm border border-border">
                                             <div>
                                                 <h2 className="text-lg font-semibold" itemProp="name">{exp.title}</h2>
                                                 <p className="text-sm text-muted-foreground" itemProp={exp.title.includes('B.Tech') || exp.title.includes('Education') ? "educationalLevel" : "employer"}>

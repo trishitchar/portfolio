@@ -80,16 +80,10 @@ export default function Projects() {
 				<h1 className="text-4xl font-bold mb-3">Full Stack Projects</h1>
 			</header>
 
-			<div className="relative">
-				<div className="hidden md:block absolute left-6 top-0 bottom-0 w-0.5 bg-border" />
-
+			<div>
 				<ul className="space-y-8">
 					{projectsData.map((project, index) => (
 						<li key={project.id} className="flex items-start md:items-center">
-							<div className="flex-shrink-0 mr-4">
-								<div className="w-4 h-4 rounded-full bg-border ring-4 ring-white dark:ring-gray-900 shadow-sm" />
-							</div>
-
 							<div className="flex-1" itemScope itemType="https://schema.org/CreativeWork" itemProp="itemListElement">
 								<meta itemProp="position" content={String(index + 1)} />
 								<meta itemProp="author" content={project.author} />
