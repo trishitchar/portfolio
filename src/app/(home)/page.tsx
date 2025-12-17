@@ -51,21 +51,24 @@ export const metadata: Metadata = {
 
 export default function Home() {
 	return (
-		<main className="max-w-6xl mx-auto">
+		<main>
 			<div className="h-full border-2 border-yellow-400">
 				<Hero />
 			</div>
-			<div className="h-full border-2 border-red-400">
-				<Projects />
-			</div>
 			<div className="h-full border-2 border-green-400">
 				<Experience />
+			</div>
+			<div className="h-full border-2 border-red-400">
+				<Projects />
 			</div>
 			<div className="h-full border-2 border-blue-400">
 				<Contact />
 			</div>
 			<div className="h-full border-2 border-purple-400">
 				<FAQ />
+			</div>
+			<div className="h-full border-2 border-gray-400">
+				<Contact />
 			</div>
 		</main>
 	)

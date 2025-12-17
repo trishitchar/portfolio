@@ -149,21 +149,6 @@ export default function Contact() {
         </div>
       </section>
 
-      <footer className="mt-6 p-6 bg-gray-50 dark:bg-gray-800 rounded-lg">
-        <h2 className="text-xl font-semibold mb-3">About Trishit Char</h2>
-        <p className="text-gray-700 dark:text-gray-300">
-          <strong>Trishit Char</strong> (also known as <strong>Trishit</strong>) is a Full-Stack Developer 
-          based in India with expertise in React, Next.js, TypeScript, Node.js, MongoDB, PostgreSQL, and 
-          AI integration. <strong>Trishit</strong> has developed projects like AI-flix and TcharGram, 
-          demonstrating proficiency in building scalable, user-centric applications.
-        </p>
-        <p className="text-gray-700 dark:text-gray-300 mt-3">
-          Whether you're looking for a freelance developer, a full-time hire, or a collaboration partner, 
-          <strong> Trishit Char</strong> is open to new opportunities. Reach out via email or schedule 
-          a meeting to discuss your project!
-        </p>
-      </footer>
-
       {/* Structured Data for ContactPage */}
       <script
         type="application/ld+json"

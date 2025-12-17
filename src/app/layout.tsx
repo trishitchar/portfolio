@@ -3,8 +3,7 @@ import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { ThemeProvider } from "@/components/theme/theme-provider";
-import Hero from "@/components/Hero";
-import NavBar from "@/components/NavBar";
+import Link from "next/link";
 
 const siteUrl = "https://trishit.dev";
 const siteName = "Trishit Char Portfolio";
@@ -96,9 +95,22 @@ export default function RootLayout({
           enableSystem={false}
           disableTransitionOnChange
         >
-          <div className="h-full p-4">
-
+          <Link href={'/'} aria-label="Trishit Char Home">
+						<h1 className="fixed top-5 left-5 z-50 head-text-sm font-light hover:cursor-pointer hover:underline font-mono" itemProp="name">
+							Trishit Char
+						</h1>
+					</Link>
+          {/* middle render children */}
+          <div className="h-full p-4 max-w-6xl mx-auto">
             {children}
+          </div>
+          {/* right side fixed */}
+          <div className="fixed right-5 top-5 z-50 flex flex-col ">
+            <p>Home</p>
+            <p>Experience</p>
+            <p>Projects</p>
+            <p>Contact</p>
+            <p>FAQ</p>
           </div>
         </ThemeProvider>
         <Analytics />
