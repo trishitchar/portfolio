@@ -67,9 +67,6 @@ export default function Home() {
 			<div className="h-full border-2 border-purple-400">
 				<FAQ />
 			</div>
-			<div className="h-full border-2 border-gray-400">
-				<Contact />
-			</div>
 		</main>
 	)
 }

@@ -8,6 +8,7 @@ interface AnimatedLinkProps {
     children: string;
     hoverColor?: string;
     className?: string;
+    onClick?: () => void;
 }
 
 export default function AnimatedLink({
@@ -15,6 +16,7 @@ export default function AnimatedLink({
     children,
     hoverColor = "#8b5cf6", // default violet
     className = "",
+    onClick,
 }: AnimatedLinkProps) {
     const [isHovered, setIsHovered] = useState(false);
     const containerRef = useRef<HTMLAnchorElement>(null);
@@ -29,6 +31,7 @@ export default function AnimatedLink({
             className={`relative inline-block overflow-hidden cursor-pointer text-right ${className}`}
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
+            onClick={onClick}
             style={{
                 color: isHovered ? hoverColor : "inherit",
                 transition: "color 0.3s ease",

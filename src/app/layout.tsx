@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     "Trishit Char full stack",
     "Trishit MERN stack",
   ],
-  alternates: { 
+  alternates: {
     canonical: siteUrl,
     languages: { en: siteUrl },
     types: {
@@ -97,16 +97,16 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Link href={'/'} aria-label="Trishit Char Home">
-						<h1 className="fixed top-5 left-5 z-50 head-text-sm font-light hover:cursor-pointer hover:underline font-mono" itemProp="name">
-							Trishit Char
-						</h1>
-					</Link>
+            <h1 className="fixed top-3 left-4 md:top-5 md:left-5 z-50 text-sm md:text-base font-light hover:cursor-pointer hover:underline font-mono" itemProp="name">
+              Trishit Char
+            </h1>
+          </Link>
           {/* middle render children */}
-          <div className="h-full p-4 max-w-6xl mx-auto">
+          <div className="h-full p-4 pt-16 md:pt-4 max-w-6xl mx-auto">
             {children}
           </div>
-          {/* right side fixed */}
-          <div className="fixed right-5 top-5 z-50 flex flex-col ">
+          {/* Navigation - fixed top right on all sizes */}
+          <div className="fixed right-4 top-3 md:right-5 md:top-5 z-50 flex flex-col items-end">
             <RightSide />
           </div>
         </ThemeProvider>
