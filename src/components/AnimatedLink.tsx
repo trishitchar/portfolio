@@ -14,7 +14,7 @@ interface AnimatedLinkProps {
 export default function AnimatedLink({
     href,
     children,
-    hoverColor = "#8b5cf6", // default violet
+    hoverColor = "var(--nav-accent-1)", // Uses theme accent color
     className = "",
     onClick,
 }: AnimatedLinkProps) {

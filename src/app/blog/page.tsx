@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Blog | Trishit Char",
     description:
-      "Explore blog posts by Trishit Char — covering React, Next.js, full-stack projects, and developer insights.",
+      "Explore blog posts by Trishit Char - covering React, Next.js, full-stack projects, and developer insights.",
     url: "https://trishit.dev/blog",
     siteName: "Trishit Char Portfolio",
     type: "website",
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Blog | Trishit Char",
     description:
-      "Developer blog by Trishit Char — exploring React, Next.js, TypeScript, and full-stack development.",
+      "Developer blog by Trishit Char - exploring React, Next.js, TypeScript, and full-stack development.",
   },
 };
 

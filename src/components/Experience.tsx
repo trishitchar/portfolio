@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     openGraph: {
         title: "Experience - Trishit Char | Full Stack Developer",
         description:
-            "Explore the journey of Trishit Char (Trishit), Full Stack Developer — from professional roles at Revmaxx and Tecosys to academic milestones at HETC.",
+            "Explore the journey of Trishit Char (Trishit), Full Stack Developer - from professional roles at Revmaxx and Tecosys to academic milestones at HETC.",
         url: "https://trishit.dev/experience",
         siteName: "Trishit Char Portfolio",
         images: [
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
         creator: "@trishitchar",
         title: "Experience - Trishit Char",
         description:
-            "Professional and academic journey of Trishit Char — Full Stack Developer.",
+            "Professional and academic journey of Trishit Char - Full Stack Developer.",
         images: ["https://trishit.dev/opengraph-image.png"],
     },
 };
@@ -103,24 +103,24 @@ const EXPERIENCES: ExperienceItem[] = [
 // will make a good illustration for images and videos, same for project section
 export default function Experience() {
     return (
-        <div className="px-4 py-1 space-y-7 mx-auto" itemScope itemType="https://schema.org/Person">
+        <div className="px-4 py-1 space-y-5 md:space-y-7 mx-auto" itemScope itemType="https://schema.org/Person">
             <meta itemProp="name" content="Trishit Char" />
             <meta itemProp="alternateName" content="Trishit" />
             <meta itemProp="url" content="https://trishit.dev" />
 
-            <header className="mb-6">
+            <header className="mb-4 md:mb-6">
                 {/* TODO: remove the education from below and when user hover on education it should show the education details  */}
-                <h1 className="text-4xl font-bold mb-3">Professional Experience & Education</h1>
+                <h1 className="text-2xl md:text-4xl font-bold mb-2 md:mb-3">Professional Experience & Education</h1>
             </header>
 
             <div>
-                <ul className="space-y-8">
+                <ul className="space-y-6 md:space-y-8">
                     {EXPERIENCES.map((exp, idx) => (
                         <li key={idx} className="flex items-start md:items-center">
                             <div className="flex-1" itemScope itemType={exp.title.includes('B.Tech') || exp.title.includes('Education') ? "https://schema.org/EducationalOccupationalCredential" : "https://schema.org/WorkExperience"}>
-                                <div className="flex flex-col md:flex-row gap-6">
-                                    <div className="w-full md:w-[60%] space-y-4">
-                                        <div className="flex flex-col md:flex-row md:justify-between md:items-center p-4 rounded-md shadow-sm border border-border">
+                                <div className="flex flex-col md:flex-row gap-4 md:gap-6">
+                                    <div className="w-full md:w-[60%] space-y-3 md:space-y-4">
+                                        <div className="flex flex-col md:flex-row md:justify-between md:items-center p-3 md:p-4 rounded-md shadow-sm border border-border">
                                             <div>
                                                 <h2 className="text-lg font-semibold" itemProp="name">{exp.title}</h2>
                                                 <p className="text-sm text-muted-foreground" itemProp={exp.title.includes('B.Tech') || exp.title.includes('Education') ? "educationalLevel" : "employer"}>
@@ -137,7 +137,7 @@ export default function Experience() {
                                         </div>
 
                                         {exp.details && exp.details.length > 0 && (
-                                            <ul className="ml-4 list-disc text-sm text-gray-700 dark:text-gray-300 space-y-2">
+                                            <ul className="ml-4 list-disc text-sm text-foreground/80 space-y-2">
                                                 {exp.details.map((d, i) => (
                                                     <li key={i} itemProp="description">{d}</li>
                                                 ))}
@@ -146,7 +146,7 @@ export default function Experience() {
                                     </div>
 
                                     <div className="w-full md:w-[40%] hidden md:block">
-                                        <div className="h-full min-h-[200px] w-full bg-gray-100 dark:bg-gray-800/50 rounded-xl border-2 border-dashed border-border flex items-center justify-center text-muted-foreground">
+                                        <div className="h-full min-h-[200px] w-full bg-surface rounded-xl border-2 border-dashed border-border flex items-center justify-center text-muted-foreground">
                                             <span>Image Placeholder</span>
                                         </div>
                                     </div>

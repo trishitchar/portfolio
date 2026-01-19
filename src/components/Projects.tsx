@@ -72,16 +72,16 @@ const projectsData = [
 
 export default function Projects() {
 	return (
-		<div className="px-4 py-1 space-y-7 mx-auto" itemScope itemType="https://schema.org/ItemList">
+		<div className="px-4 py-1 space-y-5 md:space-y-7 mx-auto mb-4" itemScope itemType="https://schema.org/ItemList">
 			<meta itemProp="name" content="Trishit Char's Projects" />
 			<meta itemProp="description" content="A collection of full-stack development projects by Trishit Char (Trishit) including AI-powered applications and social networking platforms." />
 
-			<header className="mb-6">
-				<h1 className="text-4xl font-bold mb-3">Full Stack Projects</h1>
+			<header className="mb-4 md:mb-6">
+				<h1 className="text-2xl md:text-4xl font-bold mb-2 md:mb-3">Full Stack Projects</h1>
 			</header>
 
 			<div>
-				<ul className="space-y-8">
+				<ul className="space-y-6 md:space-y-8">
 					{projectsData.map((project, index) => (
 						<li key={project.id} className="flex items-start md:items-center">
 							<div className="flex-1" itemScope itemType="https://schema.org/CreativeWork" itemProp="itemListElement">
@@ -90,9 +90,9 @@ export default function Projects() {
 								<meta itemProp="datePublished" content={project.datePublished} />
 								<meta itemProp="url" content={project.liveUrl} />
 
-								<div className="flex flex-col md:flex-row gap-6">
-									<div className="w-full md:w-[60%] space-y-4">
-										<div className="flex flex-col md:flex-row md:justify-between md:items-center bg-white dark:bg-gray-800 p-4 rounded-md shadow-sm border border-border">
+								<div className="flex flex-col md:flex-row gap-4 md:gap-6">
+									<div className="w-full md:w-[60%] space-y-3 md:space-y-4">
+										<div className="flex flex-col md:flex-row md:justify-between md:items-center bg-card p-3 md:p-4 rounded-md shadow-sm border border-border">
 											<div>
 												<h2 className="text-lg font-semibold" itemProp="name">
 													{project.name.split(":")[0]}
@@ -104,7 +104,7 @@ export default function Projects() {
 											<time className="mt-2 md:mt-0 text-sm text-muted-foreground">{project.datePublished}</time>
 										</div>
 
-										<ul className="ml-4 list-disc text-sm text-gray-700 dark:text-gray-300 space-y-2">
+										<ul className="ml-4 list-disc text-sm text-foreground/80 space-y-2">
 											<li>
 												<strong>Tech Stack:</strong> {project.techStack}
 											</li>
@@ -117,7 +117,7 @@ export default function Projects() {
 														href={project.githubUrl}
 														target="_blank"
 														rel="noopener noreferrer"
-														className="flex items-center gap-1 text-sm text-blue-600 dark:text-blue-400 hover:underline"
+														className="flex items-center gap-1 text-sm text-link hover:underline"
 														aria-label={`View ${project.name} by Trishit Char on GitHub`}
 														itemProp="codeRepository"
 													>
@@ -127,7 +127,7 @@ export default function Projects() {
 														href={project.liveUrl}
 														target="_blank"
 														rel="noopener noreferrer"
-														className="flex items-center gap-1 text-sm text-green-600 dark:text-green-400 hover:underline"
+														className="flex items-center gap-1 text-sm text-primary hover:underline"
 														aria-label={`View live demo of ${project.name} by Trishit`}
 													>
 														<ExternalLinkIcon className="w-5 h-5" /> Live Demo
@@ -138,7 +138,7 @@ export default function Projects() {
 									</div>
 
 									<div className="w-full md:w-[40%] hidden md:block">
-										<div className="h-full min-h-[200px] w-full bg-gray-100 dark:bg-gray-800/50 rounded-xl border-2 border-dashed border-border flex items-center justify-center text-muted-foreground">
+										<div className="h-full min-h-[200px] w-full bg-surface rounded-xl border-2 border-dashed border-border flex items-center justify-center text-muted-foreground">
 											<span>Project Preview</span>
 										</div>
 									</div>

@@ -15,15 +15,14 @@ export default function NavBar() {
   ];
 
   return (
-    <nav className="w-full flex items-center justify-between py-4 sticky top-0 z-10 px-8 border-b border-gray-300 dark:border-gray-700 bg-white/30 dark:bg-gray-900/30 backdrop-blur-md">
+    <nav className="w-full flex items-center justify-between py-4 sticky top-0 z-10 px-8 border-b border-border bg-background/30 backdrop-blur-md">
       <div className="space-x-4">
         {links.map(({ href, label }) => (
           <Link
             key={href}
             href={href}
-            className={`hover:underline ${
-              pathname === href ? "font-bold underline" : ""
-            }`}
+            className={`hover:underline ${pathname === href ? "font-bold underline" : ""
+              }`}
           >
             {label}
           </Link>
