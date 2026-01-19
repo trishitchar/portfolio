@@ -3,8 +3,8 @@ import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { ThemeProvider } from "@/components/theme/theme-provider";
-import Hero from "@/components/Hero";
-import NavBar from "@/components/NavBar";
+import Link from "next/link";
+import RightSide from "@/components/RightSide";
 
 const siteUrl = "https://trishit.dev";
 const siteName = "Trishit Char Portfolio";
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     "Trishit Char full stack",
     "Trishit MERN stack",
   ],
-  alternates: { 
+  alternates: {
     canonical: siteUrl,
     languages: { en: siteUrl },
     types: {
@@ -96,16 +96,18 @@ export default function RootLayout({
           enableSystem={false}
           disableTransitionOnChange
         >
-          <div className="h-full p-4">
-            <div className="flex h-full overflow-hidden rounded-2xl flex-col md:flex-row border border-gray-300 dark:border-gray-700">
-              <div className="md:w-2/5 w-full rounded-t-2xl md:rounded-l-2xl md:rounded-tr-none border-b md:border-b-0 md:border-r border-gray-300 dark:border-gray-700">
-                <Hero />
-              </div>
-              <div className="md:w-3/5 w-full overflow-y-auto rounded-b-2xl md:rounded-r-2xl md:rounded-bl-none">
-                <NavBar />
-                {children}
-              </div>
-            </div>
+          <Link href={'/'} aria-label="Trishit Char Home">
+            <h1 className="fixed top-3 left-4 md:top-5 md:left-5 z-50 text-sm md:text-base font-light hover:cursor-pointer hover:underline font-mono" itemProp="name">
+              Trishit Char
+            </h1>
+          </Link>
+          {/* middle render children */}
+          <div className="h-full p-4 pt-16 md:pt-4 max-w-6xl mx-auto">
+            {children}
+          </div>
+          {/* Navigation - fixed top right on all sizes */}
+          <div className="fixed right-4 top-3 md:right-5 md:top-5 z-50 flex flex-col items-end">
+            <RightSide />
           </div>
         </ThemeProvider>
         <Analytics />

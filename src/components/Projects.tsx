@@ -1,5 +1,51 @@
-import { GitHubLogoIcon } from "@radix-ui/react-icons";
+import { GitHubLogoIcon, ExternalLinkIcon } from "@radix-ui/react-icons";
 import Link from "next/link";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+	title: "Projects by Trishit Char | Full-Stack Developer Portfolio",
+	description:
+		"Explore full-stack and AI-powered projects by Trishit Char (Trishit), including AI-flix (GPT-powered movie platform with 10,000+ titles), TcharGram (real-time social networking app), and more. Discover how Trishit builds innovative web applications using React, Next.js, Node.js, and AI integration.",
+	keywords: [
+		"Trishit Char projects",
+		"Trishit projects",
+		"Trishit developer projects",
+		"Trishit Char portfolio",
+		"AI-flix Trishit",
+		"TcharGram Trishit Char",
+		"Trishit React projects",
+		"Trishit full stack projects",
+		"Trishit AI projects",
+	],
+	alternates: {
+		canonical: "https://trishit.dev/projects",
+	},
+	openGraph: {
+		title: "Projects by Trishit Char | Full-Stack Developer",
+		description:
+			"Showcasing innovative projects by Trishit Char (Trishit): AI-flix, a GPT-integrated movie site, and TcharGram, a real-time social platform. See how Trishit Char builds modern web applications.",
+		url: "https://trishit.dev/projects",
+		siteName: "Trishit Char Portfolio",
+		images: [
+			{
+				url: "https://trishit.dev/opengraph-image.png",
+				width: 1200,
+				height: 630,
+				alt: "Trishit Char's Projects - Full-Stack Development Portfolio",
+			},
+		],
+		locale: "en_US",
+		type: "website",
+	},
+	twitter: {
+		card: "summary_large_image",
+		site: "@trishitchar",
+		creator: "@trishitchar",
+		title: "Projects by Trishit Char",
+		description: "Explore full-stack projects by Trishit including AI-flix and TcharGram",
+		images: ["https://trishit.dev/opengraph-image.png"],
+	},
+};
 
 const projectsData = [
 	{
@@ -25,70 +71,83 @@ const projectsData = [
 ];
 
 export default function Projects() {
-    return (
-		<article className="flex flex-col items-center justify-center px-6 py-10" itemScope itemType="https://schema.org/ItemList">
+	return (
+		<div className="px-4 py-1 space-y-5 md:space-y-7 mx-auto mb-4" itemScope itemType="https://schema.org/ItemList">
 			<meta itemProp="name" content="Trishit Char's Projects" />
 			<meta itemProp="description" content="A collection of full-stack development projects by Trishit Char (Trishit) including AI-powered applications and social networking platforms." />
-			
-			<div className="grid gap-6 max-w-3xl w-full">
-				{projectsData.map((project, index) => (
-					<section 
-						key={project.id}
-						className="rounded-2xl shadow-md p-6 border border-gray-200 bg-white dark:bg-gray-800 dark:border-gray-700 hover:shadow-lg transition"
-						itemScope 
-						itemType="https://schema.org/CreativeWork"
-						itemProp="itemListElement"
-					>
-						<meta itemProp="position" content={String(index + 1)} />
-						<meta itemProp="author" content={project.author} />
-						<meta itemProp="datePublished" content={project.datePublished} />
-						<meta itemProp="url" content={project.liveUrl} />
-						
-						<h2 className="text-2xl font-semibold mb-2" itemProp="name">
-							{project.name} by <Link href="/" className="text-primary hover:underline">Trishit Char</Link>
-						</h2>
-						<p className="text-sm text-gray-600 dark:text-gray-400 mb-3" itemProp="keywords">
-							<strong>Tech Stack:</strong> {project.techStack}
-						</p>
-						<p className="text-gray-700 dark:text-gray-300 mb-3" itemProp="description">
-							{project.description}
-						</p>
-						<div className="flex items-center gap-4">
-							<a
-								href={project.githubUrl}
-								target="_blank"
-								rel="noopener noreferrer"
-								className="flex items-center gap-1 text-sm text-blue-600 dark:text-blue-400 hover:underline"
-								aria-label={`View ${project.name} by Trishit Char on GitHub`}
-								itemProp="codeRepository"
-							>
-								<GitHubLogoIcon className="w-5 h-5" /> GitHub
-							</a>
-							<a
-								href={project.liveUrl}
-								target="_blank"
-								rel="noopener noreferrer"
-								className="text-sm text-green-600 dark:text-green-400 hover:underline"
-								aria-label={`View live demo of ${project.name} by Trishit`}
-							>
-								Live Demo
-							</a>
-						</div>
-					</section>
-				))}
-			</div>
 
-			{/* Additional SEO content */}
-			<footer className="mt-8 max-w-3xl text-center text-sm text-gray-600 dark:text-gray-400">
-				<p>
-					These projects showcase <strong>Trishit Char's</strong> expertise in full-stack development, 
-					AI integration, and modern web technologies. <strong>Trishit</strong> continues to build 
-					innovative solutions that solve real-world problems. 
-					<Link href="/contact" className="text-primary hover:underline ml-1">
-						Contact Trishit Char
-					</Link> for collaborations or freelance opportunities.
-				</p>
-			</footer>
-		</article>
+			<header className="mb-4 md:mb-6">
+				<h1 className="text-2xl md:text-4xl font-bold mb-2 md:mb-3">Full Stack Projects</h1>
+			</header>
+
+			<div>
+				<ul className="space-y-6 md:space-y-8">
+					{projectsData.map((project, index) => (
+						<li key={project.id} className="flex items-start md:items-center">
+							<div className="flex-1" itemScope itemType="https://schema.org/CreativeWork" itemProp="itemListElement">
+								<meta itemProp="position" content={String(index + 1)} />
+								<meta itemProp="author" content={project.author} />
+								<meta itemProp="datePublished" content={project.datePublished} />
+								<meta itemProp="url" content={project.liveUrl} />
+
+								<div className="flex flex-col md:flex-row gap-4 md:gap-6">
+									<div className="w-full md:w-[60%] space-y-3 md:space-y-4">
+										<div className="flex flex-col md:flex-row md:justify-between md:items-center bg-card p-3 md:p-4 rounded-md shadow-sm border border-border">
+											<div>
+												<h2 className="text-lg font-semibold" itemProp="name">
+													{project.name.split(":")[0]}
+												</h2>
+												<p className="text-sm text-muted-foreground" itemProp="keywords">
+													Full Stack Application
+												</p>
+											</div>
+											<time className="mt-2 md:mt-0 text-sm text-muted-foreground">{project.datePublished}</time>
+										</div>
+
+										<ul className="ml-4 list-disc text-sm text-foreground/80 space-y-2">
+											<li>
+												<strong>Tech Stack:</strong> {project.techStack}
+											</li>
+											<li itemProp="description">
+												{project.description}
+											</li>
+											<li className="list-none pt-2">
+												<div className="flex items-center gap-4">
+													<a
+														href={project.githubUrl}
+														target="_blank"
+														rel="noopener noreferrer"
+														className="flex items-center gap-1 text-sm text-link hover:underline"
+														aria-label={`View ${project.name} by Trishit Char on GitHub`}
+														itemProp="codeRepository"
+													>
+														<GitHubLogoIcon className="w-5 h-5" /> GitHub
+													</a>
+													<a
+														href={project.liveUrl}
+														target="_blank"
+														rel="noopener noreferrer"
+														className="flex items-center gap-1 text-sm text-primary hover:underline"
+														aria-label={`View live demo of ${project.name} by Trishit`}
+													>
+														<ExternalLinkIcon className="w-5 h-5" /> Live Demo
+													</a>
+												</div>
+											</li>
+										</ul>
+									</div>
+
+									<div className="w-full md:w-[40%] hidden md:block">
+										<div className="h-full min-h-[200px] w-full bg-surface rounded-xl border-2 border-dashed border-border flex items-center justify-center text-muted-foreground">
+											<span>Project Preview</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+					))}
+				</ul>
+			</div>
+		</div>
 	);
 }

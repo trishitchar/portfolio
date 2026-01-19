@@ -50,11 +50,11 @@ export const metadata: Metadata = {
 
 export default function Contact() {
   return (
-    <div className="p-8 flex flex-col gap-6" itemScope itemType="https://schema.org/ContactPage">
+    <div className="p-4 md:p-8 flex flex-col gap-4 md:gap-6" itemScope itemType="https://schema.org/ContactPage">
       <header>
-        <h1 className="text-4xl font-bold mb-4">Contact Trishit Char</h1>
-        <p className="text-gray-600 dark:text-gray-400 text-lg">
-          Get in touch with <strong>Trishit Char</strong> (often searched as <strong>Trishit</strong>) 
+        <h1 className="text-2xl md:text-4xl font-bold mb-3 md:mb-4">Contact Trishit Char</h1>
+        <p className="text-muted-foreground text-base md:text-lg">
+          Get in touch with <strong>Trishit Char</strong> (often searched as <strong>Trishit</strong>)
           for freelance projects, collaborations, or full-time opportunities.
         </p>
       </header>
@@ -64,21 +64,21 @@ export default function Contact() {
         <meta itemProp="alternateName" content="Trishit" />
         <meta itemProp="jobTitle" content="Full-Stack Developer & UI/UX Designer" />
         <meta itemProp="url" content="https://trishit.dev" />
-        
-        <h2 className="text-2xl font-semibold mb-3">Ways to Connect with Trishit</h2>
-        
+
+        <h2 className="text-xl md:text-2xl font-semibold mb-3">Ways to Connect with Trishit</h2>
+
         <div className="space-y-3">
           <div>
             <h3 className="font-semibold text-lg mb-1">📧 Email</h3>
             <Link
               href="mailto:trishitchar@gmail.com"
-              className="text-blue-500 hover:underline text-lg"
+              className="text-link hover:underline text-lg"
               itemProp="email"
             >
               trishitchar@gmail.com
             </Link>
-            <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">
-              Best for project inquiries and detailed discussions. <strong>Trishit Char</strong> typically 
+            <p className="text-sm text-muted-foreground mt-1">
+              Best for project inquiries and detailed discussions. <strong>Trishit Char</strong> typically
               responds within 24 hours.
             </p>
           </div>
@@ -89,12 +89,12 @@ export default function Contact() {
               href="https://linkedin.com/in/trishitchar"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-blue-500 hover:underline"
+              className="text-link hover:underline"
               itemProp="sameAs"
             >
               linkedin.com/in/trishitchar
             </Link>
-            <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">
+            <p className="text-sm text-muted-foreground mt-1">
               Connect professionally with <strong>Trishit</strong> on LinkedIn.
             </p>
           </div>
@@ -105,12 +105,12 @@ export default function Contact() {
               href="https://github.com/trishitchar"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-blue-500 hover:underline"
+              className="text-link hover:underline"
               itemProp="sameAs"
             >
               github.com/trishitchar
             </Link>
-            <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">
+            <p className="text-sm text-muted-foreground mt-1">
               Explore <strong>Trishit Char's</strong> open-source contributions and repositories.
             </p>
           </div>
@@ -121,48 +121,33 @@ export default function Contact() {
               href="https://twitter.com/trishitchar"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-blue-500 hover:underline"
+              className="text-link hover:underline"
               itemProp="sameAs"
             >
               @trishitchar
             </Link>
-            <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">
+            <p className="text-sm text-muted-foreground mt-1">
               Follow <strong>Trishit</strong> for tech updates and insights.
             </p>
           </div>
 
-          <div className="mt-6 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
+          <div className="mt-6 p-4 bg-surface rounded-lg">
             <h3 className="font-semibold text-lg mb-2">📅 Schedule a Meeting</h3>
             <Link
               href="https://cal.com/trishit/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-blue-600 dark:text-blue-400 hover:underline font-medium"
+              className="text-link hover:underline font-medium"
             >
               Book a time with Trishit Char →
             </Link>
-            <p className="text-sm text-gray-600 dark:text-gray-400 mt-2">
-              Schedule a 1-on-1 meeting with <strong>Trishit Char</strong> to discuss your project, 
+            <p className="text-sm text-muted-foreground mt-2">
+              Schedule a 1-on-1 meeting with <strong>Trishit Char</strong> to discuss your project,
               collaboration opportunities, or just to connect!
             </p>
           </div>
         </div>
       </section>
-
-      <footer className="mt-6 p-6 bg-gray-50 dark:bg-gray-800 rounded-lg">
-        <h2 className="text-xl font-semibold mb-3">About Trishit Char</h2>
-        <p className="text-gray-700 dark:text-gray-300">
-          <strong>Trishit Char</strong> (also known as <strong>Trishit</strong>) is a Full-Stack Developer 
-          based in India with expertise in React, Next.js, TypeScript, Node.js, MongoDB, PostgreSQL, and 
-          AI integration. <strong>Trishit</strong> has developed projects like AI-flix and TcharGram, 
-          demonstrating proficiency in building scalable, user-centric applications.
-        </p>
-        <p className="text-gray-700 dark:text-gray-300 mt-3">
-          Whether you're looking for a freelance developer, a full-time hire, or a collaboration partner, 
-          <strong> Trishit Char</strong> is open to new opportunities. Reach out via email or schedule 
-          a meeting to discuss your project!
-        </p>
-      </footer>
 
       {/* Structured Data for ContactPage */}
       <script

@@ -1,4 +1,48 @@
-import React from 'react';
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "FAQ - Frequently Asked Questions | Trishit Char",
+    description:
+        "Frequently asked questions about Trishit Char (Trishit) - Full-Stack Developer. Learn about Trishit's experience, projects, technologies, location, and availability. Get answers to common questions about hiring Trishit Char for your next project.",
+    keywords: [
+        "Trishit Char FAQ",
+        "Trishit questions",
+        "Trishit developer FAQ",
+        "Who is Trishit",
+        "Who is Trishit Char",
+        "Trishit Char contact",
+        "Hire Trishit",
+        "Trishit availability",
+    ],
+    alternates: {
+        canonical: "https://trishit.dev/faq",
+    },
+    openGraph: {
+        title: "FAQ - Frequently Asked Questions | Trishit Char",
+        description:
+            "Get answers to common questions about Trishit Char (Trishit) - Full-Stack Developer. Learn about experience, projects, and how to work with Trishit.",
+        url: "https://trishit.dev/faq",
+        siteName: "Trishit Char Portfolio",
+        images: [
+            {
+                url: "https://trishit.dev/opengraph-image.png",
+                width: 1200,
+                height: 630,
+                alt: "Trishit Char FAQ - Frequently Asked Questions",
+            },
+        ],
+        locale: "en_US",
+        type: "website",
+    },
+    twitter: {
+        card: "summary_large_image",
+        site: "@trishitchar",
+        creator: "@trishitchar",
+        title: "FAQ - Frequently Asked Questions | Trishit Char",
+        description: "Common questions about Trishit Char - Full-Stack Developer",
+        images: ["https://trishit.dev/opengraph-image.png"],
+    },
+};
 
 const faqs = [
     {
@@ -37,28 +81,28 @@ const faqs = [
 
 export default function FAQ() {
     return (
-        <section className="p-8 max-w-4xl mx-auto" itemScope itemType="https://schema.org/FAQPage">
-            <header className="mb-8">
-                <h1 className="text-4xl font-bold mb-3">Frequently Asked Questions</h1>
-                <p className="text-lg text-gray-600 dark:text-gray-400">
+        <section className="p-4 md:p-8 max-w-4xl mx-auto" itemScope itemType="https://schema.org/FAQPage">
+            <header className="mb-6 md:mb-8">
+                <h1 className="text-2xl md:text-4xl font-bold mb-2 md:mb-3">Frequently Asked Questions</h1>
+                <p className="text-base md:text-lg text-muted-foreground">
                     Common questions about <strong>Trishit Char</strong> (Trishit) — Full-Stack Developer
                 </p>
             </header>
 
-            <div className="space-y-6">
+            <div className="space-y-4 md:space-y-6">
                 {faqs.map((faq, index) => (
-                    <article 
+                    <article
                         key={index}
-                        className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700"
-                        itemScope 
-                        itemProp="mainEntity" 
+                        className="bg-card p-4 md:p-6 rounded-lg shadow-sm border border-border"
+                        itemScope
+                        itemProp="mainEntity"
                         itemType="https://schema.org/Question"
                     >
-                        <h2 className="text-xl font-semibold mb-3 text-primary" itemProp="name">
+                        <h2 className="text-lg md:text-xl font-semibold mb-2 md:mb-3 text-primary" itemProp="name">
                             {faq.question}
                         </h2>
                         <div itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer">
-                            <p className="text-gray-700 dark:text-gray-300" itemProp="text">
+                            <p className="text-foreground/80" itemProp="text">
                                 {faq.answer}
                             </p>
                         </div>
@@ -66,15 +110,15 @@ export default function FAQ() {
                 ))}
             </div>
 
-            <footer className="mt-10 p-6 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
-                <h2 className="text-xl font-semibold mb-3">Still have questions?</h2>
-                <p className="text-gray-700 dark:text-gray-300 mb-3">
-                    If you have more questions about <strong>Trishit Char</strong> or would like to 
+            <footer className="mt-8 md:mt-10 p-4 md:p-6 bg-surface rounded-lg">
+                <h2 className="text-lg md:text-xl font-semibold mb-2 md:mb-3">Still have questions?</h2>
+                <p className="text-foreground/80 mb-2 md:mb-3 text-sm md:text-base">
+                    If you have more questions about <strong>Trishit Char</strong> or would like to
                     discuss a project, feel free to reach out!
                 </p>
-                <a 
-                    href="/contact" 
-                    className="text-blue-600 dark:text-blue-400 hover:underline font-medium"
+                <a
+                    href="/contact"
+                    className="text-link hover:underline font-medium"
                 >
                     Contact Trishit Char →
                 </a>
