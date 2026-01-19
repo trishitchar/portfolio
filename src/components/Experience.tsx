@@ -46,8 +46,11 @@ export const metadata: Metadata = {
 
 type ExperienceItem = {
     period: string;
+    duration: string;
     title: string;
     company: string;
+    type: "work" | "education";
+    techStack?: string[];
     details?: string[];
 };
 
@@ -73,11 +76,13 @@ function getDuration(startDateStr: string, endDateStr?: string | null): string {
 
 const EXPERIENCES: ExperienceItem[] = [
     {
-        period: `Nov 2024 - Nov 2025 (${getDuration('2024-11-01', '2025-11-01')})`,
+        period: "Nov 2024 - Nov 2025",
+        duration: getDuration('2024-11-01', '2025-11-01'),
         title: "Full Stack Developer",
         company: "RevMaxx (Onsite)",
+        type: "work",
+        techStack: ["React", "TypeScript", "Express.js", "MariaDB", "AWS S3", "GenAI", "WXT", "WordPress"],
         details: [
-            "Tech Stack: React | TypeScript | Express.js | MariaDB | AWS S3 | GenAI | WXT | WordPress.",
             "Upgraded from single-part audio upload to a multipart upload pipeline using Node.js and AWS S3, reducing audio failure rates by 75%, thereby improving reliability for long-duration files.",
             "Designed the complete front-end architecture from scratch using React, enhancing performance and responsiveness across devices.",
             "Implemented advanced prompt engineering techniques in Python using multishot prompts, improving AI output formatting and accuracy by 30%.",
@@ -86,78 +91,119 @@ const EXPERIENCES: ExperienceItem[] = [
         ],
     },
     {
-        period: `May 2024 - Oct 2024 (${getDuration('2024-05-01', '2024-10-01')})`,
+        period: "May 2024 - Oct 2024",
+        duration: getDuration('2024-05-01', '2024-10-01'),
         title: "Full Stack Developer",
         company: "Tecosys (Remote)",
+        type: "work",
+        techStack: ["React", "Next.js", "MongoDB", "TypeScript", "Node.js"],
         details: [
-            "Tech Stack: React | Next.js | MongoDB | TypeScript | Node.js.",
             "Deployed an embeddable chatbot widget SDK with React, compiled into a standalone JS bundle for seamless cross-platform integration via a single script tag, featuring customizable branding (colors, text).",
             "Built a CRM lead management platform similar to HubSpot with automated lead capture, real-time analytics dashboard, tracking user interactions, conversation history, and Google Calendar API integration enabling direct meeting scheduling from chat interfaces.",
             "Optimized main website performance implementing code splitting and server-side rendering (SSR), improving Core Web Vitals and decreasing load times by 20%, resulting in 30% increase in user engagement."
         ],
     },
-    { period: `2021 - 2025 (${getDuration('2021-02-01', '2025-01-01')})`, title: "B.Tech, Computer Science (CSE)", company: "HETC", details: ["CGPA: 8.7 / 10"] },
+    {
+        period: "2021 - 2025",
+        duration: getDuration('2021-02-01', '2025-01-01'),
+        title: "B.Tech, Computer Science (CSE)",
+        company: "HETC",
+        type: "education",
+        details: ["CGPA: 8.7 / 10"],
+    },
 ];
 
-// TODO when user clicks on the experience it should show the experience details images videos, work, linkedin references etc. on hover it'll ask to click to view more details like https://www.carlosguijarro.com/ https://basement.studio/ view project on hover
-// will make a good illustration for images and videos, same for project section
 export default function Experience() {
     return (
-        <div className="px-4 py-1 space-y-5 md:space-y-7 mx-auto" itemScope itemType="https://schema.org/Person">
+        <div className="p-4 md:p-8" itemScope itemType="https://schema.org/Person">
             <meta itemProp="name" content="Trishit Char" />
             <meta itemProp="alternateName" content="Trishit" />
             <meta itemProp="url" content="https://trishit.dev" />
 
-            <header className="mb-4 md:mb-6">
-                {/* TODO: remove the education from below and when user hover on education it should show the education details  */}
-                <h1 className="text-2xl md:text-4xl font-bold mb-2 md:mb-3">Professional Experience & Education</h1>
+            <header className="mb-6 md:mb-8">
+                <h1 className="text-2xl md:text-4xl font-bold mb-2">Professional Experience & Education</h1>
+                <p className="text-muted-foreground text-sm md:text-base">My professional journey and academic background</p>
             </header>
 
-            <div>
-                <ul className="space-y-6 md:space-y-8">
-                    {EXPERIENCES.map((exp, idx) => (
-                        <li key={idx} className="flex items-start md:items-center">
-                            <div className="flex-1" itemScope itemType={exp.title.includes('B.Tech') || exp.title.includes('Education') ? "https://schema.org/EducationalOccupationalCredential" : "https://schema.org/WorkExperience"}>
-                                <div className="flex flex-col md:flex-row gap-4 md:gap-6">
-                                    <div className="w-full md:w-[60%] space-y-3 md:space-y-4">
-                                        <div className="flex flex-col md:flex-row md:justify-between md:items-center p-3 md:p-4 rounded-md shadow-sm border border-border">
-                                            <div>
-                                                <h2 className="text-lg font-semibold" itemProp="name">{exp.title}</h2>
-                                                <p className="text-sm text-muted-foreground" itemProp={exp.title.includes('B.Tech') || exp.title.includes('Education') ? "educationalLevel" : "employer"}>
-                                                    {exp.company}
-                                                </p>
-                                                {exp.title.includes('Developer') && (
-                                                    <>
-                                                        <meta itemProp="jobTitle" content={exp.title} />
-                                                        <meta itemProp="worksFor" content={exp.company} />
-                                                    </>
-                                                )}
-                                            </div>
-                                            <time className="mt-2 md:mt-0 text-sm text-muted-foreground">{exp.period}</time>
-                                        </div>
-
-                                        {exp.details && exp.details.length > 0 && (
-                                            <ul className="ml-4 list-disc text-sm text-foreground/80 space-y-2">
-                                                {exp.details.map((d, i) => (
-                                                    <li key={i} itemProp="description">{d}</li>
-                                                ))}
-                                            </ul>
-                                        )}
+            {/* Experience Grid */}
+            <div className="space-y-px bg-grid">
+                {EXPERIENCES.map((exp, idx) => (
+                    <article
+                        key={idx}
+                        className="group relative bg-background transition-all duration-300 hover:bg-grid-hover"
+                        itemScope
+                        itemType={exp.type === "education" ? "https://schema.org/EducationalOccupationalCredential" : "https://schema.org/WorkExperience"}
+                    >
+                        {/* Grid layout for experience item */}
+                        <div className="grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-4 md:gap-6 p-4 md:p-6">
+                            {/* Left: Content */}
+                            <div>
+                                {/* Header with period */}
+                                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-4">
+                                    <div>
+                                        <h2 className="text-lg md:text-xl font-semibold group-hover:text-primary transition-colors" itemProp="name">
+                                            {exp.title}
+                                        </h2>
+                                        <p className="text-sm text-muted-foreground" itemProp={exp.type === "education" ? "educationalLevel" : "employer"}>
+                                            {exp.company}
+                                            {exp.type === "work" && (
+                                                <>
+                                                    <meta itemProp="jobTitle" content={exp.title} />
+                                                    <meta itemProp="worksFor" content={exp.company} />
+                                                </>
+                                            )}
+                                        </p>
                                     </div>
-
-                                    <div className="w-full md:w-[40%] hidden md:block">
-                                        <div className="h-full min-h-[200px] w-full bg-surface rounded-xl border-2 border-dashed border-border flex items-center justify-center text-muted-foreground">
-                                            <span>Image Placeholder</span>
-                                        </div>
+                                    <div className="flex items-center gap-2">
+                                        <time className="text-sm font-mono text-muted-foreground">{exp.period}</time>
+                                        <span className="text-xs font-mono px-2 py-0.5 bg-surface border border-grid rounded-sm text-muted-foreground">
+                                            {exp.duration}
+                                        </span>
                                     </div>
                                 </div>
+
+                                {/* Tech Stack */}
+                                {exp.techStack && (
+                                    <div className="flex flex-wrap gap-2 mb-4">
+                                        {exp.techStack.map((tech) => (
+                                            <span
+                                                key={tech}
+                                                className="px-2 py-0.5 text-xs font-mono bg-surface border border-grid rounded-sm text-muted-foreground"
+                                            >
+                                                {tech}
+                                            </span>
+                                        ))}
+                                    </div>
+                                )}
+
+                                {/* Details */}
+                                {exp.details && (
+                                    <ul className="space-y-2">
+                                        {exp.details.map((detail, i) => (
+                                            <li key={i} className="text-sm text-foreground/80 flex items-start gap-2" itemProp="description">
+                                                <span className="text-muted-foreground mt-0.5 shrink-0">→</span>
+                                                <span>{detail}</span>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                )}
                             </div>
-                        </li>
-                    ))}
-                </ul>
+
+                            {/* Right: Image placeholder (for future) */}
+                            <div className="hidden lg:flex items-center justify-center">
+                                <div className="w-full h-full min-h-[200px] bg-surface rounded-lg border border-dashed border-grid flex items-center justify-center text-muted-foreground text-sm">
+                                    <span>Image</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Hover gradient overlay */}
+                        <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none bg-gradient-to-r from-primary/5 via-transparent to-transparent" />
+                    </article>
+                ))}
             </div>
 
-            {/* Structured Data for Person with Work/Education */}
+            {/* Structured Data */}
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{
@@ -168,19 +214,8 @@ export default function Experience() {
                         alternateName: "Trishit",
                         url: "https://trishit.dev",
                         jobTitle: "Full Stack Developer",
-                        worksFor: [
-                            {
-                                "@type": "Organization",
-                                name: "Revmaxx",
-                            }
-                        ],
-                        alumniOf: [
-                            {
-                                "@type": "CollegeOrUniversity",
-                                name: "HETC",
-                                sameAs: "https://www.hetc.ac.in",
-                            }
-                        ],
+                        worksFor: [{ "@type": "Organization", name: "Revmaxx" }],
+                        alumniOf: [{ "@type": "CollegeOrUniversity", name: "HETC", sameAs: "https://www.hetc.ac.in" }],
                     }),
                 }}
             />

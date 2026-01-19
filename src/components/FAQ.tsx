@@ -46,63 +46,48 @@ export const metadata: Metadata = {
 
 const faqs = [
     {
-        question: "Who is Trishit Char?",
-        answer: "Trishit Char (often searched as Trishit) is a Full-Stack Developer and UI/UX Designer based in India. Trishit specializes in React, Next.js, TypeScript, Node.js, MongoDB, PostgreSQL, and AI integration. You can view Trishit's portfolio at trishit.dev."
+        question: "Is Trishit Char available for work?",
+        answer: "Yes! I'm currently open for freelance projects, contract work, and full-time opportunities. Feel free to reach out via email or schedule a call to discuss your project requirements."
     },
     {
-        question: "What is Trishit Char's experience?",
-        answer: "Trishit Char has over a year of professional experience working as a Full Stack Developer at companies like Revmaxx and Tecosys. Trishit has built modern web applications using the MERN stack and has developed projects like AI-flix and TcharGram."
-    },
-    {
-        question: "What projects has Trishit built?",
-        answer: "Trishit Char has built several notable projects including AI-flix (a GPT-powered movie platform with 10,000+ titles) and TcharGram (a real-time social networking app with WebSockets). Both projects showcase Trishit's expertise in full-stack development and AI integration."
-    },
-    {
-        question: "What technologies does Trishit Char use?",
-        answer: "Trishit Char is proficient in React, Next.js, TypeScript, JavaScript, Node.js, Express.js, MongoDB, PostgreSQL, Prisma, Tailwind CSS, and various AI technologies. Trishit also has experience with WebSockets, REST APIs, and modern web development tools."
-    },
-    {
-        question: "How can I contact Trishit Char?",
-        answer: "You can contact Trishit Char via email at trishitchar@gmail.com, connect on LinkedIn at linkedin.com/in/trishitchar, or schedule a meeting at cal.com/trishit. Trishit is available for freelance projects, collaborations, and full-time opportunities."
+        question: "What technologies does Trishit specialize in?",
+        answer: "I specialize in React, Next.js, TypeScript, Node.js, Express.js, MongoDB, PostgreSQL, and AWS cloud services. I also have experience with AI/ML integration, including OpenAI and Gemini APIs."
     },
     {
         question: "Where is Trishit Char located?",
-        answer: "Trishit Char is based in West Bengal, India. Trishit works remotely and is available for both remote and on-site opportunities within India."
+        answer: "I'm based in West Bengal, India, and I'm comfortable working remotely with teams across different time zones. I'm flexible with meeting schedules and async communication."
     },
     {
-        question: "Is Trishit Char available for hire?",
-        answer: "Yes, Trishit Char is available for freelance projects, contract work, and full-time opportunities. Contact Trishit at trishitchar@gmail.com or schedule a meeting to discuss your project requirements."
+        question: "What is Trishit's professional experience?",
+        answer: "I have 1.5+ years of professional experience working at Revmaxx and Tecosys, where I built production-grade applications serving 10,000+ users. I've reduced system failures by 75% and improved user engagement by 30% through my work."
     },
-    {
-        question: "What is Trishit's educational background?",
-        answer: "Trishit Char holds a B.Tech degree in Computer Science (CSE) from HETC with a CGPA of 8.7/10. This strong academic foundation combined with professional experience makes Trishit a well-rounded developer."
-    }
 ];
 
 export default function FAQ() {
     return (
-        <section className="p-4 md:p-8 max-w-4xl mx-auto" itemScope itemType="https://schema.org/FAQPage">
+        <div className="p-4 md:p-8" itemScope itemType="https://schema.org/FAQPage">
             <header className="mb-6 md:mb-8">
-                <h1 className="text-2xl md:text-4xl font-bold mb-2 md:mb-3">Frequently Asked Questions</h1>
-                <p className="text-base md:text-lg text-muted-foreground">
-                    Common questions about <strong>Trishit Char</strong> (Trishit) — Full-Stack Developer
+                <h2 className="text-2xl md:text-4xl font-bold mb-2">Frequently Asked Questions</h2>
+                <p className="text-muted-foreground text-sm md:text-base">
+                    Common questions about Trishit Char (Trishit) - Full-Stack Developer
                 </p>
             </header>
 
-            <div className="space-y-4 md:space-y-6">
+            {/* FAQ Grid - Responsive */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-grid mb-6">
                 {faqs.map((faq, index) => (
                     <article
                         key={index}
-                        className="bg-card p-4 md:p-6 rounded-lg shadow-sm border border-border"
+                        className="group bg-background p-4 md:p-6 transition-all duration-300 hover:bg-grid-hover"
                         itemScope
                         itemProp="mainEntity"
                         itemType="https://schema.org/Question"
                     >
-                        <h2 className="text-lg md:text-xl font-semibold mb-2 md:mb-3 text-primary" itemProp="name">
+                        <h3 className="text-sm md:text-base font-semibold mb-2 group-hover:text-primary transition-colors" itemProp="name">
                             {faq.question}
-                        </h2>
+                        </h3>
                         <div itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer">
-                            <p className="text-foreground/80" itemProp="text">
+                            <p className="text-sm text-foreground/70 leading-relaxed" itemProp="text">
                                 {faq.answer}
                             </p>
                         </div>
@@ -110,21 +95,18 @@ export default function FAQ() {
                 ))}
             </div>
 
-            <footer className="mt-8 md:mt-10 p-4 md:p-6 bg-surface rounded-lg">
-                <h2 className="text-lg md:text-xl font-semibold mb-2 md:mb-3">Still have questions?</h2>
-                <p className="text-foreground/80 mb-2 md:mb-3 text-sm md:text-base">
-                    If you have more questions about <strong>Trishit Char</strong> or would like to
-                    discuss a project, feel free to reach out!
-                </p>
+            {/* CTA */}
+            <div className="p-4 md:p-6 bg-surface border-t border-grid">
+                <p className="text-sm text-muted-foreground mb-2">Still have questions?</p>
                 <a
-                    href="/contact"
-                    className="text-link hover:underline font-medium"
+                    href="#contact"
+                    className="text-sm text-link hover:underline font-medium inline-flex items-center gap-1"
                 >
-                    Contact Trishit Char →
+                    Contact Trishit Char <span>→</span>
                 </a>
-            </footer>
+            </div>
 
-            {/* Structured Data for FAQ */}
+            {/* Structured Data */}
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{
@@ -142,6 +124,6 @@ export default function FAQ() {
                     }),
                 }}
             />
-        </section>
+        </div>
     );
 }

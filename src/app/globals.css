@@ -45,6 +45,8 @@
   --color-sidebar-ring: var(--sidebar-ring);
   --color-link: var(--link);
   --color-surface: var(--surface);
+  --color-grid: var(--grid-line);
+  --color-grid-hover: var(--grid-hover);
   --font-sans: Geist Mono, monospace;
   --font-mono: Geist Mono, monospace;
   --font-serif: Geist Mono, monospace;
@@ -117,6 +119,9 @@
   --nav-accent-5: oklch(0.52 0.08 85);
   /* Semantic colors - Surface */
   --surface: oklch(0.97 0 0);
+  /* Grid styling */
+  --grid-line: oklch(0.88 0 0);
+  --grid-hover: oklch(0.96 0 0);
   /* Base styling */
   --font-sans: Geist Mono, monospace;
   --font-serif: Geist Mono, monospace;
@@ -183,6 +188,9 @@
   --nav-accent-5: oklch(0.74 0.10 85);
   /* Semantic colors - Surface */
   --surface: oklch(0.20 0 0);
+  /* Grid styling (subtle for dark mode) */
+  --grid-line: oklch(0.25 0 0);
+  --grid-hover: oklch(0.18 0 0);
   /* Base styling */
   --radius: 0rem;
   --font-sans: Geist Mono, monospace;
@@ -211,8 +219,104 @@
     @apply border-border outline-ring/50;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Offset for fixed header when scrolling to anchor */
+  section[id] {
+    scroll-margin-top: 4rem;
+  }
+
   body {
     @apply bg-background text-foreground;
     letter-spacing: var(--tracking-normal);
   }
+}
+
+/* Futuristic Grid Styles */
+.futuristic-grid-container {
+  position: relative;
+  width: 100%;
+}
+
+/* Background grid pattern - subtle dots */
+.grid-background {
+  background-image:
+    radial-gradient(circle at 1px 1px, var(--grid-line) 1px, transparent 0);
+  background-size: 40px 40px;
+  opacity: 0.3;
+}
+
+/* Grid cell glassmorphic effect */
+.grid-cell-glass {
+  background: linear-gradient(135deg,
+      oklch(from var(--background) l c h / 0.8) 0%,
+      oklch(from var(--background) l c h / 0.4) 100%);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* Animated grid line glow on hover */
+@keyframes grid-glow {
+
+  0%,
+  100% {
+    box-shadow: inset 0 0 0 1px var(--grid-line);
+  }
+
+  50% {
+    box-shadow: inset 0 0 20px 1px oklch(from var(--primary) l c h / 0.1);
+  }
+}
+
+/* Grid section styling */
+.grid-section {
+  position: relative;
+  border-top: 1px solid var(--grid-line);
+}
+
+.grid-section::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: var(--grid-line);
+}
+
+.grid-section::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: var(--grid-line);
+}
+
+/* Gradient orb decorations */
+.gradient-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.15;
+  pointer-events: none;
+}
+
+.gradient-orb-1 {
+  width: 400px;
+  height: 400px;
+  background: oklch(0.6 0.15 280);
+  top: 10%;
+  left: -10%;
+}
+
+.gradient-orb-2 {
+  width: 300px;
+  height: 300px;
+  background: oklch(0.6 0.15 200);
+  bottom: 20%;
+  right: -5%;
 }

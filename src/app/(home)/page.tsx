@@ -51,21 +51,43 @@ export const metadata: Metadata = {
 
 export default function Home() {
 	return (
-		<main>
-			<div className="h-full border-2 border-yellow-400">
-				<Hero />
-			</div>
-			<div className="h-full border-2 border-green-400">
-				<Experience />
-			</div>
-			<div className="h-full border-2 border-red-400">
-				<Projects />
-			</div>
-			<div className="h-full border-2 border-blue-400">
-				<Contact />
-			</div>
-			<div className="h-full border-2 border-purple-400">
-				<FAQ />
+		<main className="relative overflow-hidden">
+			{/* Gradient orb decorations */}
+			<div className="gradient-orb gradient-orb-1" />
+			<div className="gradient-orb gradient-orb-2" />
+
+			{/* Grid Background Pattern */}
+			<div className="fixed inset-0 grid-background pointer-events-none z-0" />
+
+			{/* Main Content with Grid Lines */}
+			<div className="relative z-10">
+				{/* Hero Section */}
+				<section id="home" className="grid-section">
+					<Hero />
+				</section>
+
+				{/* Experience Section */}
+				<section id="experience" className="grid-section">
+					<Experience />
+				</section>
+
+				{/* Projects Section */}
+				<section id="projects" className="grid-section">
+					<Projects />
+				</section>
+
+				{/* Contact Section - Full width row */}
+				<section id="contact" className="grid-section">
+					<Contact />
+				</section>
+
+				{/* FAQ Section - Full width row */}
+				<section id="faq" className="grid-section">
+					<FAQ />
+				</section>
+
+				{/* Bottom border */}
+				<div className="h-px bg-grid" />
 			</div>
 		</main>
 	)

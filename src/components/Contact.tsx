@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { EnvelopeClosedIcon, LinkedInLogoIcon, GitHubLogoIcon, CalendarIcon } from "@radix-ui/react-icons";
 
 const siteUrl = "https://trishit.dev";
 
@@ -48,108 +49,84 @@ export const metadata: Metadata = {
   },
 };
 
+const contactMethods = [
+  {
+    Icon: EnvelopeClosedIcon,
+    label: "Email",
+    value: "trishitchar@gmail.com",
+    href: "mailto:trishitchar@gmail.com",
+    description: "Best for project inquiries and detailed discussions. I typically respond within 24 hours.",
+  },
+  {
+    Icon: LinkedInLogoIcon,
+    label: "LinkedIn",
+    value: "linkedin.com/in/trishitchar",
+    href: "https://linkedin.com/in/trishitchar",
+    description: "Connect with me professionally for career opportunities and networking.",
+  },
+  {
+    Icon: GitHubLogoIcon,
+    label: "GitHub",
+    value: "github.com/trishitchar",
+    href: "https://github.com/trishitchar",
+    description: "Explore my open-source contributions and project repositories.",
+  },
+  {
+    Icon: CalendarIcon,
+    label: "Schedule a Meeting",
+    value: "cal.com/trishit",
+    href: "https://cal.com/trishit/",
+    description: "Book a 1-on-1 call to discuss your project or collaboration opportunities.",
+  },
+];
+
 export default function Contact() {
   return (
-    <div className="p-4 md:p-8 flex flex-col gap-4 md:gap-6" itemScope itemType="https://schema.org/ContactPage">
-      <header>
-        <h1 className="text-2xl md:text-4xl font-bold mb-3 md:mb-4">Contact Trishit Char</h1>
-        <p className="text-muted-foreground text-base md:text-lg">
-          Get in touch with <strong>Trishit Char</strong> (often searched as <strong>Trishit</strong>)
-          for freelance projects, collaborations, or full-time opportunities.
+    <div className="p-4 md:p-8" itemScope itemType="https://schema.org/ContactPage">
+      <header className="mb-6 md:mb-8">
+        <h2 className="text-2xl md:text-4xl font-bold mb-2">Contact Trishit Char</h2>
+        <p className="text-muted-foreground text-sm md:text-base">
+          Get in touch for freelance projects, collaborations, or full-time opportunities.
         </p>
       </header>
 
-      <section className="space-y-4" itemScope itemType="https://schema.org/Person">
+      <section itemScope itemType="https://schema.org/Person">
         <meta itemProp="name" content="Trishit Char" />
         <meta itemProp="alternateName" content="Trishit" />
-        <meta itemProp="jobTitle" content="Full-Stack Developer & UI/UX Designer" />
+        <meta itemProp="jobTitle" content="Full-Stack Developer" />
         <meta itemProp="url" content="https://trishit.dev" />
 
-        <h2 className="text-xl md:text-2xl font-semibold mb-3">Ways to Connect with Trishit</h2>
-
-        <div className="space-y-3">
-          <div>
-            <h3 className="font-semibold text-lg mb-1">📧 Email</h3>
+        {/* Contact Grid - Responsive */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-grid">
+          {contactMethods.map((method) => (
             <Link
-              href="mailto:trishitchar@gmail.com"
-              className="text-link hover:underline text-lg"
-              itemProp="email"
+              key={method.label}
+              href={method.href}
+              target={method.href.startsWith("http") ? "_blank" : undefined}
+              rel={method.href.startsWith("http") ? "noopener noreferrer" : undefined}
+              className="group bg-background p-4 md:p-5 transition-all duration-300 hover:bg-grid-hover block"
+              itemProp={method.label === "Email" ? "email" : "sameAs"}
             >
-              trishitchar@gmail.com
+              <div className="flex flex-col h-full">
+                <div className="flex items-center gap-2 mb-2">
+                  <method.Icon className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
+                  <span className="text-xs font-mono text-muted-foreground uppercase tracking-wider">
+                    {method.label}
+                  </span>
+                </div>
+                <div className="text-sm font-medium group-hover:text-primary transition-colors mb-2 break-all">
+                  {method.value}
+                </div>
+                <p className="text-xs text-muted-foreground leading-relaxed mt-auto">
+                  {method.description}
+                </p>
+              </div>
             </Link>
-            <p className="text-sm text-muted-foreground mt-1">
-              Best for project inquiries and detailed discussions. <strong>Trishit Char</strong> typically
-              responds within 24 hours.
-            </p>
-          </div>
-
-          <div>
-            <h3 className="font-semibold text-lg mb-1">💼 LinkedIn</h3>
-            <Link
-              href="https://linkedin.com/in/trishitchar"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-link hover:underline"
-              itemProp="sameAs"
-            >
-              linkedin.com/in/trishitchar
-            </Link>
-            <p className="text-sm text-muted-foreground mt-1">
-              Connect professionally with <strong>Trishit</strong> on LinkedIn.
-            </p>
-          </div>
-
-          <div>
-            <h3 className="font-semibold text-lg mb-1">🐙 GitHub</h3>
-            <Link
-              href="https://github.com/trishitchar"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-link hover:underline"
-              itemProp="sameAs"
-            >
-              github.com/trishitchar
-            </Link>
-            <p className="text-sm text-muted-foreground mt-1">
-              Explore <strong>Trishit Char's</strong> open-source contributions and repositories.
-            </p>
-          </div>
-
-          <div>
-            <h3 className="font-semibold text-lg mb-1">🐦 Twitter / X</h3>
-            <Link
-              href="https://twitter.com/trishitchar"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-link hover:underline"
-              itemProp="sameAs"
-            >
-              @trishitchar
-            </Link>
-            <p className="text-sm text-muted-foreground mt-1">
-              Follow <strong>Trishit</strong> for tech updates and insights.
-            </p>
-          </div>
-
-          <div className="mt-6 p-4 bg-surface rounded-lg">
-            <h3 className="font-semibold text-lg mb-2">📅 Schedule a Meeting</h3>
-            <Link
-              href="https://cal.com/trishit/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-link hover:underline font-medium"
-            >
-              Book a time with Trishit Char →
-            </Link>
-            <p className="text-sm text-muted-foreground mt-2">
-              Schedule a 1-on-1 meeting with <strong>Trishit Char</strong> to discuss your project,
-              collaboration opportunities, or just to connect!
-            </p>
-          </div>
+          ))}
         </div>
       </section>
 
-      {/* Structured Data for ContactPage */}
+      {/* Structured Data */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
