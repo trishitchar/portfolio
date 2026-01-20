@@ -1,48 +1,40 @@
-import { Metadata } from "next";
-
-export const metadata: Metadata = {
-    title: "Experience - Trishit Char | Professional Journey & Education",
-    description:
-        "Explore the professional and educational journey of Trishit Char (Trishit) - Full Stack Developer. Trishit has worked at Revmaxx and Tecosys, building modern web applications with React, Next.js, Node.js, and MongoDB. Education includes B.Tech in Computer Science from HETC. Discover how Trishit Char gained expertise in full-stack development.",
-    keywords: [
-        "Trishit Char experience",
-        "Trishit work experience",
-        "Trishit developer career",
-        "Trishit Char resume",
-        "Trishit professional journey",
-        "Trishit Char education",
-        "Trishit full stack developer experience",
-    ],
-    alternates: {
-        canonical: "https://trishit.dev/experience",
-    },
-    openGraph: {
-        title: "Experience - Trishit Char | Full Stack Developer",
-        description:
-            "Explore the journey of Trishit Char (Trishit), Full Stack Developer - from professional roles at Revmaxx and Tecosys to academic milestones at HETC.",
-        url: "https://trishit.dev/experience",
-        siteName: "Trishit Char Portfolio",
-        images: [
-            {
-                url: "https://trishit.dev/opengraph-image.png",
-                width: 1200,
-                height: 630,
-                alt: "Trishit Char Experience - Professional Journey",
-            },
-        ],
-        locale: "en_US",
-        type: "website",
-    },
-    twitter: {
-        card: "summary_large_image",
-        site: "@trishitchar",
-        creator: "@trishitchar",
-        title: "Experience - Trishit Char",
-        description:
-            "Professional and academic journey of Trishit Char - Full Stack Developer.",
-        images: ["https://trishit.dev/opengraph-image.png"],
-    },
-};
+// TODO: Uncomment when converting to route-based page (/experience)
+// import { Metadata } from "next";
+//
+// export const metadata: Metadata = {
+//     title: "Experience - Trishit Char | Professional Journey & Education",
+//     description:
+//         "Explore the professional and educational journey of Trishit Char (Trishit) - Full Stack Developer. Trishit has worked at Revmaxx and Tecosys, building modern web applications with React, Next.js, Node.js, and MongoDB. Education includes B.Tech in Computer Science from HETC.",
+//     keywords: [
+//         "Trishit Char experience",
+//         "Trishit work experience",
+//         "Trishit developer career",
+//         "Trishit Char resume",
+//         "Trishit professional journey",
+//         "Trishit Char education",
+//         "Trishit full stack developer experience",
+//     ],
+//     alternates: {
+//         canonical: "https://trishit.dev/experience",
+//     },
+//     openGraph: {
+//         title: "Experience - Trishit Char | Full Stack Developer",
+//         description: "Explore the journey of Trishit Char - from professional roles at Revmaxx and Tecosys to academic milestones at HETC.",
+//         url: "https://trishit.dev/experience",
+//         siteName: "Trishit Char Portfolio",
+//         images: [{ url: "https://trishit.dev/opengraph-image.png", width: 1200, height: 630, alt: "Trishit Char Experience" }],
+//         locale: "en_US",
+//         type: "website",
+//     },
+//     twitter: {
+//         card: "summary_large_image",
+//         site: "@trishitchar",
+//         creator: "@trishitchar",
+//         title: "Experience - Trishit Char",
+//         description: "Professional and academic journey of Trishit Char - Full Stack Developer.",
+//         images: ["https://trishit.dev/opengraph-image.png"],
+//     },
+// };
 
 type ExperienceItem = {
     period: string;

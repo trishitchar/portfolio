@@ -194,7 +194,7 @@ export default function RootLayout({
                 "@type": "SearchAction",
                 target: {
                   "@type": "EntryPoint",
-                  urlTemplate: `${siteUrl}/projects?q={search_term_string}`
+                  urlTemplate: `${siteUrl}/#projects`
                 },
                 "query-input": "required name=search_term_string"
               },

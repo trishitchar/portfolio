@@ -1,53 +1,41 @@
 import Link from "next/link";
-import type { Metadata } from "next";
 import { EnvelopeClosedIcon, LinkedInLogoIcon, GitHubLogoIcon, CalendarIcon } from "@radix-ui/react-icons";
 
-const siteUrl = "https://trishit.dev";
-
-export const metadata: Metadata = {
-  title: "Contact Trishit Char | Get in Touch with Trishit",
-  description:
-    "Get in touch with Trishit Char (Trishit) - Full-Stack Developer & UI/UX Designer. Connect with Trishit via email (trishitchar@gmail.com), LinkedIn, GitHub, or schedule a meeting. Trishit Char is available for freelance projects, full-time opportunities, and collaborations. Based in India, Trishit specializes in React, Next.js, and modern web development.",
-  keywords: [
-    "Contact Trishit Char",
-    "Trishit Char email",
-    "Trishit contact",
-    "Trishit developer contact",
-    "Trishit Char hire",
-    "Trishit freelance",
-    "Contact Trishit",
-    "trishitchar@gmail.com",
-  ],
-  alternates: {
-    canonical: `${siteUrl}/contact`,
-  },
-  openGraph: {
-    title: "Contact Trishit Char | Full-Stack Developer",
-    description:
-      "Reach out to Trishit Char (Trishit) for freelance projects, collaborations, or full-time opportunities. Email, LinkedIn, GitHub, and meeting scheduling links available.",
-    url: `${siteUrl}/contact`,
-    siteName: "Trishit Char Portfolio",
-    images: [
-      {
-        url: `${siteUrl}/opengraph-image.png`,
-        width: 1200,
-        height: 630,
-        alt: "Contact Trishit Char - Full-Stack Developer",
-      },
-    ],
-    locale: "en_US",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    site: "@trishitchar",
-    creator: "@trishitchar",
-    title: "Contact Trishit Char",
-    description:
-      "Get in touch with Trishit Char - Full-Stack Developer & UI/UX Designer.",
-    images: [`${siteUrl}/opengraph-image.png`],
-  },
-};
+// TODO: Uncomment when converting to route-based page (/contact)
+// import type { Metadata } from "next";
+// const siteUrl = "https://trishit.dev";
+//
+// export const metadata: Metadata = {
+//     title: "Contact Trishit Char | Get in Touch with Trishit",
+//     description: "Get in touch with Trishit Char - Full-Stack Developer. Connect via email, LinkedIn, GitHub, or schedule a meeting. Available for freelance and full-time opportunities.",
+//     keywords: [
+//         "Contact Trishit Char",
+//         "Trishit Char email",
+//         "Trishit contact",
+//         "Hire Trishit",
+//         "trishitchar@gmail.com",
+//     ],
+//     alternates: {
+//         canonical: `${siteUrl}/contact`,
+//     },
+//     openGraph: {
+//         title: "Contact Trishit Char | Full-Stack Developer",
+//         description: "Reach out to Trishit Char for freelance projects, collaborations, or full-time opportunities.",
+//         url: `${siteUrl}/contact`,
+//         siteName: "Trishit Char Portfolio",
+//         images: [{ url: `${siteUrl}/opengraph-image.png`, width: 1200, height: 630, alt: "Contact Trishit Char" }],
+//         locale: "en_US",
+//         type: "website",
+//     },
+//     twitter: {
+//         card: "summary_large_image",
+//         site: "@trishitchar",
+//         creator: "@trishitchar",
+//         title: "Contact Trishit Char",
+//         description: "Get in touch with Trishit Char - Full-Stack Developer.",
+//         images: [`${siteUrl}/opengraph-image.png`],
+//     },
+// };
 
 const contactMethods = [
   {
