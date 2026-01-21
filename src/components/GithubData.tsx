@@ -13,8 +13,15 @@ export default function GithubData() {
 	}
 
 	return (
-		<div>
-			<GitHubCalendar colorScheme={theme === 'dark' ? 'dark' : 'light'} username="trishitchar" />
+		<div className="flex justify-center">
+			<GitHubCalendar
+				colorScheme={theme === 'dark' ? 'dark' : 'light'}
+				username="trishitchar"
+				year={2025}
+				labels={{
+					totalCount: '{{count}} contributions in 2025',
+				}}
+			/>
 		</div>
 	)
 }

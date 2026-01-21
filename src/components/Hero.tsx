@@ -4,6 +4,8 @@ import { Button } from '@/components/ui/button'
 import { skillsConfig } from '@/configs/skills.config'
 import { ModeToggle } from './theme/theme-toggle'
 import { socialLinks } from '@/configs/social.config'
+import GithubData from '@/components/GithubData'
+
 
 export default function Hero() {
 	return (
@@ -53,19 +55,24 @@ export default function Hero() {
 						Hey, I'm <span className="text-primary" itemProp="name">Trishit</span>
 					</h1>
 					<p className="text-foreground/80 text-sm md:text-base leading-relaxed mb-4 md:mb-6" itemProp="description">
-						Full Stack Developer with 1.5 years building AI-powered applications and scalable web solutions.
+						Full Stack Developer with 1.5 years of experience building AI-powered applications and scalable web solutions.
 						Proficient in React.js, Node.js, and AWS cloud services. Reduced system failures by 75% and
 						improved user engagement by 30% across production apps serving 10,000+ users.
 					</p>
 
 					{/* CTA Buttons - Responsive */}
-					<div className="flex flex-wrap gap-2 sm:gap-3">
+					<div className="flex flex-wrap gap-2 sm:gap-3 mb-6">
 						<Button asChild className="font-mono text-xs sm:text-sm h-9 sm:h-10">
 							<a href="#contact">Get in touch</a>
 						</Button>
 						<Button variant="outline" asChild className="font-mono text-xs sm:text-sm h-9 sm:h-10">
 							<a href="#projects">View work</a>
 						</Button>
+					</div>
+
+					{/* GitHub Contribution Graph - Lazy loaded */}
+					<div className="mt-4">
+						<GithubData />
 					</div>
 				</div>
 
