@@ -5,11 +5,32 @@ import { Moon, Sun } from 'lucide-react'
 import { useTheme } from 'next-themes'
 import { Button } from '@/components/ui/button'
 
+declare global {
+	interface Document {
+		startViewTransition(callback: () => Promise<void> | void): {
+			ready: Promise<void>
+			finished: Promise<void>
+			updateCallbackDone: Promise<void>
+			skipTransition: () => void
+		}
+	}
+}
+
 export function ModeToggle() {
 	const { theme, setTheme } = useTheme()
 
 	const toggleTheme = () => {
-		setTheme(theme === 'light' ? 'dark' : 'light')
+		if (!document.startViewTransition) {
+			setTheme(theme === 'light' ? 'dark' : 'light')
+			return
+		}
+
+		document.documentElement.classList.add('theme-transition-ilove')
+		document.documentElement.classList.remove('theme-transition-shigure')
+
+		document.startViewTransition(() => {
+			setTheme(theme === 'light' ? 'dark' : 'light')
+		})
 	}
 
 	return (

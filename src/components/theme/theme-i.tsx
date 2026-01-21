@@ -10,6 +10,17 @@ interface ThemeIProps {
     className?: string
 }
 
+declare global {
+    interface Document {
+        startViewTransition(callback: () => Promise<void> | void): {
+            ready: Promise<void>
+            finished: Promise<void>
+            updateCallbackDone: Promise<void>
+            skipTransition: () => void
+        }
+    }
+}
+
 export function ThemeI({ mode, className }: ThemeIProps) {
     const { setTheme, theme } = useTheme()
     const [mounted, setMounted] = React.useState(false)
@@ -23,12 +34,28 @@ export function ThemeI({ mode, className }: ThemeIProps) {
     return (
         <span className={cn("inline-flex flex-col items-center justify-end font-sans leading-none relative -top-[0.35em] cursor-pointer group", className)}>
             {/* Easter Egg Tooltip */}
-            <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-3 px-3 py-1 text-xs font-mono text-accent-foreground bg-accent rounded-md shadow-md opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap z-50 select-none">
-                {mode === "light" ? "This is for you cutie 🌸" : "Hi, I'm actually Batman (◣_◢)"}
-                <span className="absolute top-full left-1/2 -translate-x-1/2 border-[6px] border-transparent border-t-accent" />
-            </span>
+            {isActive && (
+                <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-3 px-3 py-1 text-xs font-mono text-accent-foreground bg-accent rounded-md shadow-md opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap z-50 select-none">
+                    {mode === "light" ? "Click the Dark mode Cutie 🌸" : "Click the White mode Gorgeous 😍 "}
+                    <span className="absolute top-full left-1/2 -translate-x-1/2 border-[6px] border-transparent border-t-accent" />
+                </span>
+            )}
             <button
-                onClick={() => setTheme(mode)}
+                onClick={() => {
+                    if (theme === mode) return
+
+                    if (!document.startViewTransition) {
+                        setTheme(mode)
+                        return
+                    }
+
+                    document.documentElement.classList.add('theme-transition-shigure')
+                    document.documentElement.classList.remove('theme-transition-ilove')
+
+                    document.startViewTransition(() => {
+                        setTheme(mode)
+                    })
+                }}
                 className="p-[0.3em] -mt-[0.3em] -mx-[0.3em] -mb-[0.2em] transition-all hover:scale-110 active:scale-95 group animate-bounce cursor-pointer"
                 aria-label={`Switch to ${mode} mode`}
             >
@@ -36,7 +63,7 @@ export function ThemeI({ mode, className }: ThemeIProps) {
                 {mode === "light" ? (
                     <Sun
                         className={cn(
-                            "w-[0.35em] h-[0.35em]",
+                            "w-[0.50em] h-[0.50em]",
                             isActive ? "fill-current text-primary" : "text-muted-foreground opacity-50 hover:opacity-100"
                         )}
                         strokeWidth={2.5}
@@ -44,7 +71,7 @@ export function ThemeI({ mode, className }: ThemeIProps) {
                 ) : (
                     <Moon
                         className={cn(
-                            "w-[0.35em] h-[0.35em]",
+                            "w-[0.50em] h-[0.50em]",
                             isActive ? "fill-current text-primary" : "text-muted-foreground opacity-50 hover:opacity-100"
                         )}
                         strokeWidth={2.5}
