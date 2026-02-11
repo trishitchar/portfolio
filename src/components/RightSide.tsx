@@ -43,6 +43,14 @@ export default function RightSide() {
                     </nav>
                 )}
             </div>
+            {/* Bottom-right emblem */}
+            <div className="fixed bottom-1 right-1 sm:right-1 md:-bottom-6 md:-right-4 z-50 flex flex-col items-end hover:cursor-pointer">
+                <img
+                    src="/trishit.png"
+                    alt="site emblem"
+                    className="hidden md:block mt-2 w-60 h-60 rounded-md shadow-md object-cover"
+                />
+            </div>
         </>
     );
 }
