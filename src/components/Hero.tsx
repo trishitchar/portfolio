@@ -2,8 +2,10 @@ import Link from 'next/link'
 import { Rss } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { skillsConfig } from '@/configs/skills.config'
-import { ModeToggle } from './theme/theme-toggle'
+import { ThemeI } from './theme/theme-i'
 import { socialLinks } from '@/configs/social.config'
+import GithubData from '@/components/GithubData'
+
 
 export default function Hero() {
 	return (
@@ -12,17 +14,23 @@ export default function Hero() {
 			<header className="flex flex-wrap justify-between items-center gap-3 mb-6 md:mb-8">
 				{/* Social Links */}
 				<nav className="flex items-center gap-2 sm:gap-3 order-2 sm:order-1" aria-label="Social media links">
-					{socialLinks.map(({ platform, url, icon: Icon }) => (
+					{socialLinks.map(({ platform, url, icon: Icon, username }) => (
 						<Link
 							key={platform}
 							href={url}
 							target="_blank"
 							rel="noopener noreferrer me"
 							aria-label={`${platform} - Trishit Char`}
-							className="text-muted-foreground hover:text-foreground transition-colors p-1"
+							className="text-muted-foreground hover:text-foreground transition-colors p-1 group relative block"
 							itemProp="sameAs"
 						>
 							<Icon className="w-4 h-4 sm:w-5 sm:h-5" />
+
+							{/* Tooltip */}
+							<span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-3 px-2 py-1 text-[10px] font-mono text-accent-foreground bg-accent rounded-md shadow-md opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap z-50 select-none">
+								{username}
+								<span className="absolute top-full left-1/2 -translate-x-1/2 border-[5px] border-transparent border-t-accent" />
+							</span>
 						</Link>
 					))}
 				</nav>
@@ -41,7 +49,6 @@ export default function Hero() {
 							<span className="sr-only">RSS feed</span>
 						</Link>
 					</Button>
-					<ModeToggle />
 				</div>
 			</header>
 
@@ -50,22 +57,32 @@ export default function Hero() {
 				{/* Left: Bio */}
 				<div>
 					<h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-4 leading-tight">
-						Hey, I'm <span className="text-primary" itemProp="name">Trishit</span>
+						Hey, I'm{" "}
+						<span className="text-primary font-bold" itemProp="name">
+							Tr<ThemeI mode="light" />sh<ThemeI mode="dark" />t
+						</span>
 					</h1>
 					<p className="text-foreground/80 text-sm md:text-base leading-relaxed mb-4 md:mb-6" itemProp="description">
-						Full Stack Developer with 1.5 years building AI-powered applications and scalable web solutions.
+						Full Stack Developer with 1.5 years of experience building AI-powered applications and scalable web solutions.
+
+
 						Proficient in React.js, Node.js, and AWS cloud services. Reduced system failures by 75% and
 						improved user engagement by 30% across production apps serving 10,000+ users.
 					</p>
 
 					{/* CTA Buttons - Responsive */}
-					<div className="flex flex-wrap gap-2 sm:gap-3">
+					<div className="flex flex-wrap gap-2 sm:gap-3 mb-6">
 						<Button asChild className="font-mono text-xs sm:text-sm h-9 sm:h-10">
 							<a href="#contact">Get in touch</a>
 						</Button>
 						<Button variant="outline" asChild className="font-mono text-xs sm:text-sm h-9 sm:h-10">
 							<a href="#projects">View work</a>
 						</Button>
+					</div>
+
+					{/* GitHub Contribution Graph - Lazy loaded */}
+					<div className="mt-4">
+						<GithubData />
 					</div>
 				</div>
 
