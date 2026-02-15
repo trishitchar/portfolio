@@ -1,13 +1,10 @@
-import Contact from "@/components/Contact";
 import Experience from "@/components/Experience";
-import FAQ from "@/components/FAQ";
 import Hero from "@/components/Hero";
-import Projects from "@/components/Projects";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
 	title: "Trishit Char - Full-Stack Developer Portfolio | Trishit.dev",
-	description: "Welcome to Trishit Char's (Trishit) official portfolio at trishit.dev. Discover projects by Trishit including AI-flix (GPT-powered movie platform), TcharGram (social networking app), and more. Trishit specializes in React, Next.js, TypeScript, Node.js, and AI integration. Explore Trishit Char's work, technical skills, and professional experience.",
+	description: "Welcome to Trishit Char's (Trishit) official portfolio at trishit.dev. Full-Stack Developer specializing in React, Next.js, TypeScript, Node.js, and AI integration. Explore Trishit Char's work, technical skills, and professional experience.",
 	keywords: [
 		"Trishit",
 		"Trishit Char",
@@ -16,16 +13,16 @@ export const metadata: Metadata = {
 		"Trishit Char portfolio",
 		"Trishit full stack developer",
 		"Trishit.dev",
-		"Trishit Char projects",
+		"trishit full stack",
 		"Trishit React developer",
-		"Trishit AI developer",
+		"Trishit TypeScript developer",
 	],
 	alternates: {
 		canonical: "https://trishit.dev",
 	},
 	openGraph: {
 		title: "Trishit Char - Full-Stack Developer Portfolio | Trishit.dev",
-		description: "Explore Trishit Char's (Trishit) portfolio showcasing AI-flix, TcharGram, and other full-stack projects. Trishit specializes in React, Next.js, TypeScript, and modern web development.",
+		description: "Trishit Char's (Trishit) official portfolio showcasing expertise in React, Next.js, TypeScript, Node.js, and AI integration.",
 		url: "https://trishit.dev",
 		siteName: "Trishit Char Portfolio",
 		images: [
@@ -44,7 +41,7 @@ export const metadata: Metadata = {
 		site: "@trishitchar",
 		creator: "@trishitchar",
 		title: "Trishit Char - Full-Stack Developer Portfolio",
-		description: "Discover Trishit's (Trishit Char) full-stack development projects at trishit.dev",
+		description: "Trishit Char's (Trishit) official portfolio at trishit.dev - Full-Stack Developer & AI specialist",
 		images: ["https://trishit.dev/opengraph-image.png"],
 	},
 };
@@ -69,21 +66,6 @@ export default function Home() {
 				{/* Experience Section */}
 				<section id="experience" className="grid-section">
 					<Experience />
-				</section>
-
-				{/* Projects Section */}
-				<section id="projects" className="grid-section">
-					<Projects />
-				</section>
-
-				{/* Contact Section - Full width row */}
-				<section id="contact" className="grid-section">
-					<Contact />
-				</section>
-
-				{/* FAQ Section - Full width row */}
-				<section id="faq" className="grid-section">
-					<FAQ />
 				</section>
 
 				{/* Bottom border */}
