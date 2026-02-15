@@ -3,12 +3,21 @@
 import { useState } from "react";
 import AnimatedLink from "./AnimatedLink";
 import { Menu, X } from "lucide-react";
+import { useMechanicalKeyboardEffect } from "@/hooks/useMechanicalKeyboardEffect";
 
 export default function RightSide() {
     const [isOpen, setIsOpen] = useState(false);
+    const [isPressed, setIsPressed] = useState(false);
+    const { triggerMechanicalFeedback } = useMechanicalKeyboardEffect();
 
     const toggleMenu = () => setIsOpen(!isOpen);
     const closeMenu = () => setIsOpen(false);
+
+    const handleKeyboardClick = () => {
+        triggerMechanicalFeedback();
+        setIsPressed(true);
+        setTimeout(() => setIsPressed(false), 150);
+    };
 
     return (
         <>
@@ -48,7 +57,11 @@ export default function RightSide() {
                 <img
                     src="/trishit.png"
                     alt="site emblem"
-                    className="hidden md:block mt-2 w-60 h-60 rounded-md shadow-md object-cover"
+                    className="hidden md:block mt-2 w-60 h-60 rounded-md shadow-md object-cover transition-transform duration-150"
+                    style={{
+                        transform: isPressed ? "scaleY(0.92) translateY(12px)" : "scaleY(1) translateY(0)",
+                    }}
+                    onClick={handleKeyboardClick}
                 />
             </div>
         </>

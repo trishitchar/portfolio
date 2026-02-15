@@ -3,6 +3,7 @@ import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { ThemeProvider } from "@/components/theme/theme-provider";
+import { GlobalClickListener } from "@/components/GlobalClickListener";
 import Link from "next/link";
 import RightSide from "@/components/RightSide";
 
@@ -96,6 +97,7 @@ export default function RootLayout({
           enableSystem={false}
           disableTransitionOnChange
         >
+          <GlobalClickListener />
           <Link href={'/'} aria-label="Trishit Char Home">
             <h1 className="fixed top-3 left-3 sm:left-4 md:top-5 md:left-5 z-50 text-xs sm:text-sm md:text-base font-light hover:cursor-pointer hover:underline font-mono" itemProp="name">
               Trishit Char
