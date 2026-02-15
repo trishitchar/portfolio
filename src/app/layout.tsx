@@ -220,18 +220,24 @@ export default function RootLayout({
                 {
                   "@type": "ListItem",
                   position: 2,
+                  name: "Experience",
+                  item: `${siteUrl}/experience`,
+                },
+                {
+                  "@type": "ListItem",
+                  position: 3,
                   name: "Projects",
                   item: `${siteUrl}/projects`,
                 },
                 {
                   "@type": "ListItem",
-                  position: 3,
+                  position: 4,
                   name: "Contact",
                   item: `${siteUrl}/contact`,
                 },
                 {
                   "@type": "ListItem",
-                  position: 4,
+                  position: 5,
                   name: "FAQ",
                   item: `${siteUrl}/faq`,
                 },
