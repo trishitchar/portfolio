@@ -42,6 +42,10 @@ export const metadata: Metadata = {
       "application/rss+xml": [{ url: "/rss.xml", title: "Trishit Char RSS Feed" }],
     }
   },
+  other: {
+    "llms-txt": `${siteUrl}/llms.txt`,
+    "llms-full-txt": `${siteUrl}/llms-full.txt`,
+  },
   openGraph: {
     type: "website",
     url: siteUrl,
@@ -90,6 +94,10 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <link rel="alternate" type="text/plain" href="/llms.txt" title="LLMs.txt" />
+        <link rel="alternate" type="text/plain" href="/llms-full.txt" title="LLMs Full Documentation" />
+      </head>
       <body className="antialiased h-screen">
         <ThemeProvider
           attribute="class"
