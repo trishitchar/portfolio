@@ -135,7 +135,7 @@
   --surface: oklch(0.98 0.003 80.636);
   /* Grid styling */
   --grid-line: oklch(0.90 0.002 80.636);
-  --grid-hover: oklch(0.98 0.003 80.636);
+  --grid-hover: oklch(0.8137 0.0234 233.89);
   /* Base styling */
   --font-sans: Geist Mono, monospace;
   --font-serif: Geist Mono, monospace;
