@@ -73,10 +73,10 @@ export default function Hero() {
 					{/* CTA Buttons - Responsive */}
 					<div className="flex flex-wrap gap-2 sm:gap-3 mb-6">
 						<Button asChild className="font-mono text-xs sm:text-sm h-9 sm:h-10">
-							<a href="#contact">Get in touch</a>
+							<Link href="/contact">Get in touch</Link>
 						</Button>
 						<Button variant="outline" asChild className="font-mono text-xs sm:text-sm h-9 sm:h-10">
-							<a href="#projects">View work</a>
+							<Link href="/projects">View work</Link>
 						</Button>
 					</div>
 

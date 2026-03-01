@@ -33,6 +33,9 @@
 //     },
 // };
 
+import Link from "next/link";
+
+
 const faqs = [
     {
         question: "Is Trishit Char available for work?",
@@ -87,12 +90,12 @@ export default function FAQ() {
             {/* CTA */}
             <div className="p-4 md:p-6 bg-surface border-t border-grid">
                 <p className="text-sm text-muted-foreground mb-2">Still have questions?</p>
-                <a
-                    href="#contact"
+                <Link
+                    href="/contact"
                     className="text-sm text-link hover:underline font-medium inline-flex items-center gap-1"
                 >
                     Contact Trishit Char <span>→</span>
-                </a>
+                </Link>
             </div>
 
             {/* Structured Data */}
