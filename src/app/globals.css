@@ -310,18 +310,18 @@
 /* Shigure UI Dance Transition */
 .theme-transition-shigure::view-transition-new(root) {
   mask: url('https://media.tenor.com/cyORI7kwShQAAAAi/shigure-ui-dance.gif') center / 0 no-repeat;
-  animation: scale 3s;
+  animation: scale 3s both;
 }
 
 /* I Love You Love Transition */
 .theme-transition-ilove::view-transition-new(root) {
   mask: url('https://media.tenor.com/Jz0aSpk9VIQAAAAi/i-love-you-love.gif') center / 0 no-repeat;
-  animation: scale 1.5s;
+  animation: scale 1.5s both;
 }
 
 .theme-transition-ilove::view-transition-old(root),
 .theme-transition-ilove.dark::view-transition-old(root) {
-  animation: scale 1.5s;
+  animation: scale 1.5s both;
 }
 
 /* Futuristic Grid Styles */
