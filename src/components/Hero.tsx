@@ -56,16 +56,15 @@ export default function Hero() {
 			<div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12">
 				{/* Left: Bio */}
 				<div>
-					<h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-4 leading-tight">
-						Hey, I'm{" "}
-						<span className="text-primary font-bold" itemProp="name">
+					<h1 className="mb-3 md:mb-4 leading-tight">
+						<span className="inline lg:block text-sm lg:text-xs font-mono text-muted-foreground mr-1 lg:mr-0 lg:mb-1">hey, I'm</span>
+						<span className="text-xl sm:text-2xl lg:text-5xl xl:text-6xl font-black text-neutral-700 dark:text-neutral-100" itemProp="name">
 							Tr<ThemeI mode="light" />sh<ThemeI mode="dark" />t
 						</span>
 					</h1>
 					<p className="text-foreground/80 text-sm md:text-base leading-relaxed mb-4 md:mb-6" itemProp="description">
-						Full Stack Developer with 1.5 years of experience building AI-powered applications and scalable web solutions.
-
-
+						Full Stack Developer with 2 years of professional experience building AI-powered applications, blockchain, and scalable web solutions.
+<br></br>
 						Proficient in React.js, Node.js, and AWS cloud services. Reduced system failures by 75% and
 						improved user engagement by 30% across production apps serving 10,000+ users.
 					</p>
@@ -88,7 +87,7 @@ export default function Hero() {
 
 				{/* Right: Skills Grid - Hidden on mobile, visible on lg+ */}
 				<div className="space-y-3 md:space-y-4" aria-label="Technical Skills">
-					<h2 className="text-xs sm:text-sm font-mono text-muted-foreground uppercase tracking-wider">Technical Stack</h2>
+					<h2 className="text-xs sm:text-sm font-semibold text-foreground uppercase tracking-wider ">Technical Stack</h2>
 					<div className="grid grid-cols-1 gap-px bg-grid">
 						{skillsConfig.map(skill => (
 							<div

@@ -36,6 +36,8 @@
 //     },
 // };
 
+import Image from "next/image";
+
 type ExperienceItem = {
     period: string;
     duration: string;
@@ -44,6 +46,7 @@ type ExperienceItem = {
     type: "work" | "education";
     techStack?: string[];
     details?: string[];
+    image?: string;
 };
 
 function getDuration(startDateStr: string, endDateStr?: string | null): string {
@@ -74,6 +77,7 @@ const EXPERIENCES: ExperienceItem[] = [
         company: "RevMaxx (Onsite)",
         type: "work",
         techStack: ["React", "TypeScript", "Express.js", "MariaDB", "AWS S3", "GenAI", "WXT", "WordPress"],
+        image: "/revmaxx-image-main.jpg",
         details: [
             "Upgraded from single-part audio upload to a multipart upload pipeline using Node.js and AWS S3, reducing audio failure rates by 75%, thereby improving reliability for long-duration files.",
             "Designed the complete front-end architecture from scratch using React, enhancing performance and responsiveness across devices.",
@@ -89,6 +93,7 @@ const EXPERIENCES: ExperienceItem[] = [
         company: "Tecosys (Remote)",
         type: "work",
         techStack: ["React", "Next.js", "MongoDB", "TypeScript", "Node.js"],
+        image: "/tecosys-main.jpg",
         details: [
             "Deployed an embeddable chatbot widget SDK with React, compiled into a standalone JS bundle for seamless cross-platform integration via a single script tag, featuring customizable branding (colors, text).",
             "Built a CRM lead management platform similar to HubSpot with automated lead capture, real-time analytics dashboard, tracking user interactions, conversation history, and Google Calendar API integration enabling direct meeting scheduling from chat interfaces.",
@@ -113,13 +118,13 @@ export default function Experience() {
             <meta itemProp="url" content="https://trishit.dev" />
 
             <header className="mb-6 md:mb-8">
-                <h1 className="text-2xl md:text-4xl font-bold mb-2">Professional Experience & Education</h1>
-                <p className="text-muted-foreground text-sm md:text-base">My professional journey and academic background</p>
+                <h1 className="text-2xl md:text-4xl font-bold mb-2">Professional Experience</h1>
+                <p className="text-muted-foreground text-sm md:text-base">My professional journey</p>
             </header>
 
             {/* Experience Grid */}
             <div className="space-y-px bg-grid">
-                {EXPERIENCES.map((exp, idx) => (
+                {EXPERIENCES.filter(exp => exp.type === "work").map((exp, idx) => (
                     <article
                         key={idx}
                         className="group relative bg-background transition-all duration-300 hover:bg-grid-hover"
@@ -127,7 +132,7 @@ export default function Experience() {
                         itemType={exp.type === "education" ? "https://schema.org/EducationalOccupationalCredential" : "https://schema.org/WorkExperience"}
                     >
                         {/* Grid layout for experience item */}
-                        <div className="grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-4 md:gap-6 p-4 md:p-6">
+                        <div className={`grid grid-cols-1 gap-4 md:gap-6 p-4 md:p-6 ${exp.image ? "lg:grid-cols-[1fr_360px]" : ""}`}>
                             {/* Left: Content */}
                             <div>
                                 {/* Header with period */}
@@ -154,8 +159,8 @@ export default function Experience() {
                                     </div>
                                 </div>
 
-                                {/* Tech Stack */}
-                                {exp.techStack && (
+                                {/* Tech Stack — shown in left col only when there's no image */}
+                                {exp.techStack && !exp.image && (
                                     <div className="flex flex-wrap gap-2 mb-4">
                                         {exp.techStack.map((tech) => (
                                             <span
@@ -181,12 +186,35 @@ export default function Experience() {
                                 )}
                             </div>
 
-                            {/* Right: Image placeholder (for future) */}
-                            <div className="hidden lg:flex items-center justify-center">
-                                <div className="w-full h-full min-h-[200px] bg-surface rounded-lg border border-dashed border-grid flex items-center justify-center text-muted-foreground text-sm">
-                                    <span>Image</span>
+                            {/* Right: Tech stack + image stacked */}
+                            {exp.image && (
+                                <div className="hidden lg:flex flex-col gap-3 justify-center">
+                                    {/* Tech stack above image */}
+                                    {exp.techStack && (
+                                        <div className="flex flex-wrap gap-1.5">
+                                            {exp.techStack.map((tech) => (
+                                                <span
+                                                    key={tech}
+                                                    className="px-2 py-0.5 text-xs font-mono bg-surface border border-grid rounded-sm text-muted-foreground"
+                                                >
+                                                    {tech}
+                                                </span>
+                                            ))}
+                                        </div>
+                                    )}
+                                    {/* Full image, no crop */}
+                                    <div className="w-full rounded-lg overflow-hidden border border-grid">
+                                        <Image
+                                            src={exp.image}
+                                            alt={`${exp.company} preview`}
+                                            width={720}
+                                            height={405}
+                                            className="w-full h-auto"
+                                            sizes="360px"
+                                        />
+                                    </div>
                                 </div>
-                            </div>
+                            )}
                         </div>
 
                         {/* Hover gradient overlay */}

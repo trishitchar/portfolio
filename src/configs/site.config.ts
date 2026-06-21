@@ -4,7 +4,7 @@ export const siteConfig: Site = {
 	name: 'trishit.dev',
 	title: 'Trishit Char | Full-Stack Developer, Programmer, Engineer',
 	description:
-		"Hi, I'm Trishit Char (Trishit) - A full stack developer with over a year of professional experience. I build web, mobile, desktop, server, and applied AI projects. Specializing in React, Next.js, TypeScript, Node.js, and AI integration. View my portfolio at trishit.dev to see projects like AI-flix and TcharGram. Available for freelance and full-time opportunities.",
+		"Hi, I'm Trishit Char (Trishit) - A full stack developer with over two years of professional experience. I build web, mobile, desktop, server, and applied AI projects. Specializing in React, Next.js, TypeScript, Node.js, and AI integration. View my portfolio at trishit.dev to see projects like AI-flix and TcharGram. Available for freelance and full-time opportunities.",
 	keywords: [
 		'Trishit',
 		'Trishit Char',

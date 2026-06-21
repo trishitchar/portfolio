@@ -6,7 +6,7 @@ Personal portfolio website built with Next.js 16, React 19, and TypeScript.
 
 ## About
 
-Full Stack Developer with 1.5 years building AI-powered applications and scalable web solutions. Proficient in React.js, Node.js, and AWS cloud services. Reduced system failures by 75% and improved user engagement by 30% across production apps serving 10,000+ users.
+Full Stack Developer with 2 years building AI-powered applications and scalable web solutions. Proficient in React.js, Node.js, and AWS cloud services. Reduced system failures by 75% and improved user engagement by 30% across production apps serving 10,000+ users.
 
 ## Tech Stack
 

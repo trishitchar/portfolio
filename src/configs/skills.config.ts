@@ -22,6 +22,7 @@ export const skillsConfig = [
 		],
 	},
 	{ category: 'Backend', technologies: [ 'Express.js', 'Hono.js', 'NestJS', 'Go',] },
+	{ category: 'Database', technologies: ['MongoDB', 'MySQL', 'PostgreSQL', 'MariaDB', 'Redis', 'SQLite'] },
 	{ category: 'Mobile', technologies: ['React Native', 'Expo'] },
 	{ category: 'Javascript runtime', technologies: ['Node.js', 'Bun', 'Deno', 'Edge runtime (Vercel)', 'CF Worker'] },
 	{ category: 'DevOps', technologies: ['Docker', 'Kubernetes', 'Terraform', 'AWS', 'AWS EC2', 'AWS S3', 'GCP', 'Azure'] },
